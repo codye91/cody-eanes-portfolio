@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Process — Cody Eanes</title>
+
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Design Tokens ─── */
+    :root {
+      --bg:             #0D0D0D;
+      --surface:        #161616;
+      --surface-alt:    #1E1E1E;
+      --border:         #2A2A2A;
+      --text-primary:   #F2F2F2;
+      --text-secondary: #8A8A8A;
+      --text-muted:     #555555;
+      --accent:         #51d9d0;
+      --accent-hover:   #6ee4dc;
+      --font-display:   'Roboto', sans-serif;
+      --font-body:      'DM Sans', sans-serif;
+      --container-max:  1200px;
+      --container-pad:  clamp(24px, 5vw, 80px);
+      --section-gap:    clamp(80px, 12vw, 160px);
+      --content-gap:    clamp(40px, 6vw, 80px);
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Utilities ─── */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1.5px;
+      background: currentColor;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: #0D0D0D;
+      padding: 16px 32px;
+      border-radius: 0;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 150ms ease;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary .arrow { transition: transform 150ms ease; }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+
+    /* ─── Navigation ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(13, 13, 13, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-wordmark {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      position: relative;
+      transition: color 150ms ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active::after,
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ─── Page Hero ─── */
+    .page-hero {
+      padding-top: 64px;
+    }
+    .page-hero-content {
+      padding-top: clamp(64px, 8vw, 112px);
+      padding-bottom: clamp(64px, 8vw, 96px);
+    }
+    .hero-eyebrow { margin-bottom: 24px; }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero-subhead {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .hero-intro {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 640px;
+    }
+
+    /* ─── Phase Sections ─── */
+    .phase-section {
+      padding: var(--section-gap) 0;
+      border-top: 1px solid var(--border);
+    }
+    .phase-section.on-surface {
+      background: var(--surface);
+    }
+
+    .phase-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+    .phase-number {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 9vw, 104px);
+      font-weight: 800;
+      color: rgba(81, 217, 208, 0.18);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      padding-top: 2px;
+    }
+    .phase-header-text .eyebrow { margin-bottom: 12px; }
+    .phase-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 64px);
+    }
+    .topic-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .phase-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .phase-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .phase-list li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .phase-note {
+      margin-top: 20px;
+      padding: 16px 20px;
+      border-left: 2px solid var(--border);
+      font-size: 14px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .phase-note strong {
+      color: var(--text-secondary);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ─── Differentiators ─── */
+    .diff-section {
+      padding: var(--section-gap) 0;
+      border-top: 1px solid var(--border);
+    }
+    .diff-section .eyebrow { margin-bottom: 16px; }
+    .diff-section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 64px) clamp(40px, 6vw, 80px);
+    }
+    .diff-item {
+      padding-top: 24px;
+      border-top: 2px solid var(--accent);
+    }
+    .diff-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .diff-body {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ─── Footer CTA ─── */
+    .footer-cta {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: var(--content-gap) 0;
+    }
+    .footer-cta .eyebrow { margin-bottom: 24px; }
+    .footer-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .footer-cta > .container > p {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .footer-bottom {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-bottom p, .footer-bottom a { font-size: 13px; color: var(--text-muted); }
+    .footer-bottom a:hover { color: var(--accent); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .phase-header { grid-template-columns: 1fr; gap: 16px; }
+      .phase-number { font-size: 56px; }
+      .phase-grid { grid-template-columns: 1fr; }
+      .diff-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-wordmark">Cody Eanes</a>
+      <ul class="nav-links">
+        <li><a href="/">The Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/my-process" class="active">Process</a></li>
+        <li><a href="#" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="eyebrow hero-eyebrow fade-up">My Process</p>
+        <h1 class="fade-up">My Design Process</h1>
+        <p class="hero-subhead fade-up">From ambiguity to aligned teams to shipped products.</p>
+        <p class="hero-intro fade-up">The case studies show the outcomes. This page shows the thinking behind them — the research, the systems, the stakeholder dynamics, and the moments where process actually makes or breaks a project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 1 -->
+  <section class="phase-section">
+    <div class="container">
+      <div class="phase-header fade-up">
+        <span class="phase-number">01</span>
+        <div class="phase-header-text">
+          <p class="eyebrow">Phase One</p>
+          <h2 class="phase-title">Understanding the<br>Problem Space</h2>
+        </div>
+      </div>
+      <div class="phase-grid">
+        <div class="fade-up">
+          <h3 class="topic-title">Discovery &amp; Research</h3>
+          <ul class="phase-list">
+            <li>Stakeholder interviews to understand business goals and constraints</li>
+            <li>User research to uncover real needs and pain points</li>
+            <li>Competitive analysis to identify opportunities and patterns</li>
+          </ul>
+        </div>
+        <div class="fade-up">
+          <h3 class="topic-title">AI-Powered Content Analysis</h3>
+          <ul class="phase-list">
+            <li>Analyze existing content for patterns and gaps</li>
+            <li>Extract key themes from user feedback at scale</li>
+            <li>Generate initial content inventories and audit reports</li>
+          </ul>
+          <p class="phase-note"><strong>In practice:</strong> On a recent e-commerce redesign, I fed an entire website into ChatGPT to identify the top 10 friction points in the primary user flow — work that would've taken weeks happened in an afternoon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 2 -->
+  <section class="phase-section on-surface">
+    <div class="container">
+      <div class="phase-header fade-up">
+        <span class="phase-number">02</span>
+        <div class="phase-header-text">
+          <p class="eyebrow">Phase Two</p>
+          <h2 class="phase-title">Making Sense<br>of Chaos</h2>
+        </div>
+      </div>
+      <div class="phase-grid">
+        <div class="fade-up">
+          <h3 class="topic-title">Heuristic Evaluation</h3>
+          <ul class="phase-list">
+            <li>Nielsen's 10 usability heuristics</li>
+            <li>Accessibility standards (WCAG 2.2)</li>
+            <li>Industry-specific best practices</li>
+          </ul>
+        </div>
+        <div class="fade-up">
+          <h3 class="topic-title">Information Architecture</h3>
+          <ul class="phase-list">
+            <li>Content buckets that group related information logically</li>
+            <li>User flow diagrams showing key pathways</li>
+            <li>Sitemaps that visualize the entire information ecosystem</li>
+          </ul>
+          <p class="phase-note"><strong>A core belief:</strong> Good IA is invisible — users should find what they need without thinking about how it's organized. When navigation becomes the subject, something has already gone wrong.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 3 -->
+  <section class="phase-section">
+    <div class="container">
+      <div class="phase-header fade-up">
+        <span class="phase-number">03</span>
+        <div class="phase-header-text">
+          <p class="eyebrow">Phase Three</p>
+          <h2 class="phase-title">Bringing Ideas<br>to Life</h2>
+        </div>
+      </div>
+      <div class="phase-grid">
+        <div class="fade-up">
+          <h3 class="topic-title">Wireframing &amp; Prototyping</h3>
+          <ul class="phase-list">
+            <li>Lo-fi wireframes to test information hierarchy</li>
+            <li>High-fidelity wireframes for design system work</li>
+            <li>Interactive prototypes for usability testing</li>
+          </ul>
+        </div>
+        <div class="fade-up">
+          <h3 class="topic-title">Design System Thinking</h3>
+          <ul class="phase-list">
+            <li>Creating reusable component libraries</li>
+            <li>Documenting interaction patterns</li>
+            <li>Establishing design tokens for consistency</li>
+          </ul>
+          <p class="phase-note"><strong>The reason this matters:</strong> It's not just about efficiency. It's about creating experiences that feel cohesive across every touchpoint — whether someone is on the homepage or a deeply nested product page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 4 -->
+  <section class="phase-section on-surface">
+    <div class="container">
+      <div class="phase-header fade-up">
+        <span class="phase-number">04</span>
+        <div class="phase-header-text">
+          <p class="eyebrow">Phase Four</p>
+          <h2 class="phase-title">Collaboration<br>&amp; Refinement</h2>
+        </div>
+      </div>
+      <div class="phase-grid">
+        <div class="fade-up">
+          <h3 class="topic-title">Developer Partnership</h3>
+          <ul class="phase-list">
+            <li>Co-creating during the design phase to ensure feasibility</li>
+            <li>Providing detailed specs with interaction states and edge cases</li>
+            <li>Participating in sprint planning to prioritize features</li>
+            <li>Conducting design QA during implementation</li>
+          </ul>
+        </div>
+        <div class="fade-up">
+          <h3 class="topic-title">Iterative Improvement</h3>
+          <ul class="phase-list">
+            <li>Monitor analytics and user feedback post-launch</li>
+            <li>Conduct usability testing on live products</li>
+            <li>Create optimization roadmaps based on data</li>
+          </ul>
+          <p class="phase-note"><strong>The work doesn't end at launch.</strong> The best products I've shipped have been improved meaningfully in the 90 days after go-live — because that's when real usage data starts telling the truth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes My Process Different -->
+  <section class="diff-section">
+    <div class="container">
+      <p class="eyebrow fade-up">What Makes Me Different</p>
+      <h2 class="diff-section-headline fade-up">Four principles that<br>shape every project.</h2>
+      <div class="diff-grid">
+        <div class="diff-item fade-up">
+          <h3 class="diff-title">AI-Augmented,<br>Human-Centered</h3>
+          <p class="diff-body">AI accelerates the work — synthesis, content analysis, logic mapping. But it doesn't replace the judgment calls. Every AI output runs through a human lens before it informs a decision.</p>
+        </div>
+        <div class="diff-item fade-up">
+          <h3 class="diff-title">Systems Over<br>Screens</h3>
+          <p class="diff-body">I design patterns and components, not just individual interfaces. A screen is a snapshot. A system is a strategy — and it's what makes design scale without falling apart.</p>
+        </div>
+        <div class="diff-item fade-up">
+          <h3 class="diff-title">Collaborative<br>by Design</h3>
+          <p class="diff-body">Stakeholders, developers, and users aren't interruptions to the process — they're inputs to it. The best design decisions I've made came from conversations I didn't expect to matter.</p>
+        </div>
+        <div class="diff-item fade-up">
+          <h3 class="diff-title">Data-Informed,<br>Not Data-Driven</h3>
+          <p class="diff-body">Numbers tell you what happened. Research tells you why. I balance quantitative signals with qualitative understanding — because optimizing for metrics alone often produces products that test well and feel wrong.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <footer class="footer-cta">
+    <div class="container">
+      <span class="eyebrow">Let's Build Something</span>
+      <h2>Ready to ship<br>something great?</h2>
+      <p>If you're looking for a design leader who can run a workshop in the morning, challenge an engineering assumption in the afternoon, and ship something worth shipping — let's talk.</p>
+      <a href="mailto:cody@codyeanes.com" class="btn-primary">Hit me up <span class="arrow">→</span></a>
+      <div class="footer-bottom">
+        <p>© 2026 Cody Eanes</p>
+        <a href="https://eanescreative.co" target="_blank" rel="noopener">eanescreative.co ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.page-hero .fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 80 + i * 100);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.phase-section .fade-up, .diff-section .fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

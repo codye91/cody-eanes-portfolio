@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Cody Eanes</title>
+
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Design Tokens ─── */
+    :root {
+      --bg:             #0D0D0D;
+      --surface:        #161616;
+      --surface-alt:    #1E1E1E;
+      --border:         #2A2A2A;
+      --text-primary:   #F2F2F2;
+      --text-secondary: #8A8A8A;
+      --text-muted:     #555555;
+      --accent:         #51d9d0;
+      --accent-hover:   #6ee4dc;
+      --font-display:   'Roboto', sans-serif;
+      --font-body:      'DM Sans', sans-serif;
+      --container-max:  1200px;
+      --container-pad:  clamp(24px, 5vw, 80px);
+      --section-gap:    clamp(80px, 12vw, 160px);
+      --content-gap:    clamp(40px, 6vw, 80px);
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── Utilities ─── */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1.5px;
+      background: currentColor;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: #0D0D0D;
+      padding: 16px 32px;
+      border-radius: 0;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 150ms ease;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary .arrow { transition: transform 150ms ease; }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+
+    /* ─── Navigation ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(13, 13, 13, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-wordmark {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      position: relative;
+      transition: color 150ms ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active::after,
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ─── Page Hero ─── */
+    .page-hero {
+      padding-top: 64px;
+    }
+    .page-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 80px;
+      align-items: center;
+      padding-top: clamp(64px, 8vw, 112px);
+      padding-bottom: clamp(64px, 8vw, 112px);
+    }
+    .page-hero-eyebrow { margin-bottom: 24px; }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .page-hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .page-hero-image {
+      position: relative;
+      align-self: start;
+    }
+    .page-hero-image img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+    }
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .page-hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      width: 64px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    /* ─── Content Sections ─── */
+    .about-section { padding: var(--section-gap) 0; }
+    .about-section.on-surface {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .section-eyebrow { margin-bottom: 16px; }
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 24px;
+    }
+    .section-body {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .section-body + .section-body { margin-top: 24px; }
+
+    /* ─── Fact Strip ─── */
+    .fact-strip {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .fact-item { display: flex; flex-direction: column; gap: 4px; }
+    .fact-value {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .fact-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Life Section: 2-col with pull quote ─── */
+    .life-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+    .pull-quote {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: clamp(32px, 4vw, 48px);
+    }
+    .pull-quote-mark {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 88px;
+      line-height: 0.75;
+      color: var(--accent);
+      opacity: 0.25;
+      margin-bottom: 16px;
+    }
+    .pull-quote-text {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .pull-quote-attr {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ─── AI Proof Points ─── */
+    .ai-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .ai-proof-item {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 32px;
+    }
+    .ai-proof-grid .fade-up:nth-child(2) { transition-delay: 100ms; }
+    .ai-proof-grid .fade-up:nth-child(3) { transition-delay: 200ms; }
+    .ai-proof-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .ai-proof-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .ai-proof-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ─── Footer CTA ─── */
+    .footer-cta {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: var(--content-gap) 0;
+    }
+    .footer-cta .eyebrow { margin-bottom: 24px; }
+    .footer-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .footer-cta > .container > p {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .footer-bottom {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-bottom p, .footer-bottom a { font-size: 13px; color: var(--text-muted); }
+    .footer-bottom a:hover { color: var(--accent); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 960px) {
+      .page-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .page-hero-image { max-width: 320px; }
+      .life-grid { grid-template-columns: 1fr; gap: 32px; }
+      .ai-proof-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .fact-strip { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-wordmark">Cody Eanes</a>
+      <ul class="nav-links">
+        <li><a href="/">The Work</a></li>
+        <li><a href="/about" class="active">About</a></li>
+        <li><a href="/my-process">Process</a></li>
+        <li><a href="#" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div>
+          <p class="eyebrow page-hero-eyebrow fade-up">About Cody</p>
+          <h1 class="fade-up">Come on in,<br>y'all!</h1>
+          <p class="page-hero-sub fade-up">I'm a design leader working toward Creative Director — building the products, teams, and AI-integrated processes that get us there.</p>
+        </div>
+        <div class="page-hero-image fade-up">
+          <!-- TODO: replace with Image.jpeg headshot -->
+          <div class="img-placeholder">Photo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Basics -->
+  <section class="about-section">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">Background</p>
+      <p class="section-body fade-up">Howdy! I'm a design leader based in Richmond, VA, focused on building user-centered products and the teams that ship them. I've spent my career moving from craft to strategy — and now I'm directing design across complex, multi-stakeholder engagements while building the skills that take leaders from execution to creative vision. I'm not interested in maintaining the status quo; I'm here to raise the bar.</p>
+      <div class="fact-strip fade-up">
+        <div class="fact-item">
+          <span class="fact-value">10+</span>
+          <span class="fact-label">Years in UX</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-value">15+</span>
+          <span class="fact-label">Brands Launched</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-value">VML</span>
+          <span class="fact-label">WPP / Agency</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-value">RVA</span>
+          <span class="fact-label">Richmond, VA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Life Beyond Design -->
+  <section class="about-section on-surface">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">The Human Stuff</p>
+      <div class="life-grid">
+        <div>
+          <p class="section-body fade-up">When I'm not in meetings or mentoring designers, you'll find me diving into video games, debating sneaker drops, or breaking down zone defenses. I'm a new dad and have fully embraced this chapter — tucked-in t-shirts and all. I'm also a pet parent to two huskies and a cat; they keep me grounded and occasionally interrupt video calls.</p>
+        </div>
+        <div class="pull-quote fade-up">
+          <span class="pull-quote-mark">"</span>
+          <p class="pull-quote-text">Once upon a time, I dreamt of becoming a professional bowler like Norm Duke. That didn't pan out, but the focus, precision, and competitive drive stuck with me.</p>
+          <span class="pull-quote-attr">And translated directly into how I approach design leadership.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Sets Me Apart -->
+  <section class="about-section">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">What Sets Me Apart</p>
+      <h2 class="section-headline fade-up">Economics, sales,<br>and then design.</h2>
+      <p class="section-body fade-up">What sets me apart is a diversified background in economics and sales. I don't just understand how to build great experiences — I understand how to articulate their business value. I'm as comfortable in a boardroom discussing ROI as I am in a design review discussing hierarchy and interaction patterns. That fluency makes me effective at aligning stakeholders, securing buy-in, and ensuring design decisions are made with business context — not just defended from outside it.</p>
+      <p class="section-body fade-up">My foundation is classic double-diamond thinking, but my application has evolved — I focus less on personal craft and more on building systems, processes, and teams that consistently deliver user-centered outcomes. Before design, I was in sales advocating for technology adoption. My job wasn't pushing products — it was making them indispensable. That mindset still drives me.</p>
+    </div>
+  </section>
+
+  <!-- How I Work -->
+  <section class="about-section on-surface">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">How I Work</p>
+      <h2 class="section-headline fade-up">AI as a strategic multiplier,<br>not a shortcut.</h2>
+      <p class="section-body fade-up">I've led design in both Waterfall and Agile environments and know how to partner with engineering and product to find the right process for the problem — not force a methodology where it doesn't fit.</p>
+      <p class="section-body fade-up">AI is now central to how I work. And the real opportunity isn't individual efficiency — it's reshaping how teams operate. If you're thinking about how AI changes the design practice at an organizational level, that's a conversation I'm ready to have.</p>
+      <div class="ai-proof-grid">
+        <div class="ai-proof-item fade-up">
+          <span class="ai-proof-number">45</span>
+          <p class="ai-proof-title">Outcome Wayfinding System</p>
+          <p class="ai-proof-desc">Used ChatGPT + Claude to architect a quiz with 45 unique CTA combinations for Wegovy.com — logic no spreadsheet could map cleanly.</p>
+        </div>
+        <div class="ai-proof-item fade-up">
+          <span class="ai-proof-number">10×</span>
+          <p class="ai-proof-title">Research Synthesis Speed</p>
+          <p class="ai-proof-desc">AI-accelerated synthesis from user research: content inventories, friction analysis, and thematic clustering at a pace that reshapes sprint planning.</p>
+        </div>
+        <div class="ai-proof-item fade-up">
+          <span class="ai-proof-number">VML</span>
+          <p class="ai-proof-title">Team Enablement Workshops</p>
+          <p class="ai-proof-desc">Led internal workshops at VML helping designers build AI into their own workflows — because the leverage is at the team level, not the individual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <footer class="footer-cta">
+    <div class="container">
+      <span class="eyebrow">Let's Build Something</span>
+      <h2>Hey, you're way<br>below the fold!</h2>
+      <p>Whether you need a design leader who can run a workshop in the morning and challenge an engineering assumption in the afternoon — let's talk.</p>
+      <a href="mailto:cody@codyeanes.com" class="btn-primary">Hit me up <span class="arrow">→</span></a>
+      <div class="footer-bottom">
+        <p>© 2026 Cody Eanes</p>
+        <a href="https://eanescreative.co" target="_blank" rel="noopener">eanescreative.co ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.page-hero .fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 80 + i * 100);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.about-section .fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
