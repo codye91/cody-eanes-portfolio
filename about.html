@@ -4,8 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Cody Eanes</title>
-
-  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <meta name="description" content="About Cody Eanes — design leader and aspiring Creative Director building products, teams, and AI-integrated design processes.">
+  <link rel="canonical" href="https://codyeanes.com/about">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About — Cody Eanes">
+  <meta property="og:description" content="About Cody Eanes — design leader and aspiring Creative Director building products, teams, and AI-integrated design processes.">
+  <meta property="og:url" content="https://codyeanes.com/about">
+  <meta property="og:site_name" content="Cody Eanes">
+  <meta property="og:image" content="https://codyeanes.com/assets/images/about/headshot.jpg">
+  <meta property="og:image:alt" content="Cody Eanes — Design Leader">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
@@ -87,7 +95,7 @@
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       background: var(--accent);
       color: #0D0D0D;
       padding: 16px 32px;
@@ -158,6 +166,47 @@
     .nav-links a.active { color: var(--accent); }
     .nav-links a.active::after,
     .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ─── Hamburger ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0; right: 0;
+        background: rgba(13, 13, 13, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 24px var(--container-pad);
+        gap: 24px;
+      }
+      nav.nav-open .nav-links { display: flex; }
+    }
 
     /* ─── Page Hero ─── */
     .page-hero {
@@ -395,8 +444,13 @@
         <li><a href="/">The Work</a></li>
         <li><a href="/about" class="active">About</a></li>
         <li><a href="/my-process">Process</a></li>
-        <li><a href="#" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1B5phyGjlVl0t4TsXUP4TnsJMDVLRZ28G/view" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
       </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -410,8 +464,7 @@
           <p class="page-hero-sub fade-up">I'm a design leader working toward Creative Director — building the products, teams, and AI-integrated processes that get us there.</p>
         </div>
         <div class="page-hero-image fade-up">
-          <!-- TODO: replace with Image.jpeg headshot -->
-          <div class="img-placeholder">Photo</div>
+          <img src="/assets/images/about/headshot.jpg" alt="Cody Eanes" loading="lazy" style="object-position: center top;">
         </div>
       </div>
     </div>
@@ -524,6 +577,19 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.about-section .fade-up').forEach(el => observer.observe(el));
+
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navEl = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navEl.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navEl.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
   </script>
 
 </body>

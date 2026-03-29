@@ -4,8 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cody Eanes — Design Leader</title>
-
-  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <meta name="description" content="Cody Eanes is a design leader based in Richmond, VA — directing UX strategy, product design, and AI-integrated processes for complex multi-stakeholder engagements.">
+  <link rel="canonical" href="https://codyeanes.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cody Eanes — Design Leader">
+  <meta property="og:description" content="Cody Eanes is a design leader based in Richmond, VA — directing UX strategy, product design, and AI-integrated processes for complex multi-stakeholder engagements.">
+  <meta property="og:url" content="https://codyeanes.com/">
+  <meta property="og:site_name" content="Cody Eanes">
+  <meta property="og:image" content="https://codyeanes.com/assets/images/about/headshot.jpg">
+  <meta property="og:image:alt" content="Cody Eanes — Design Leader">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
@@ -80,7 +88,7 @@
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       background: var(--accent);
       color: #0D0D0D;
       padding: 16px 32px;
@@ -101,10 +109,10 @@
     .btn-secondary {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       background: transparent;
       color: var(--text-primary);
-      padding: 15px 31px;
+      padding: 16px 32px;
       border: 1px solid var(--border);
       border-radius: 0;
       cursor: pointer;
@@ -168,6 +176,47 @@
     }
     .nav-links a:hover { color: var(--accent); }
     .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ─── Hamburger ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0; right: 0;
+        background: rgba(13, 13, 13, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 24px var(--container-pad);
+        gap: 24px;
+      }
+      nav.nav-open .nav-links { display: flex; }
+    }
 
     /* ─── Hero ─── */
     .hero {
@@ -383,7 +432,7 @@
       transition: transform 150ms ease;
     }
     .card:hover .card-cta { color: var(--accent); }
-    .card:hover .card-cta .arrow { transform: translate(4px, -4px); }
+    .card:hover .card-cta .arrow { transform: translateX(4px); }
 
     .card-role {
       display: inline-flex;
@@ -394,7 +443,7 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 4px 8px;
       margin-bottom: 24px;
       align-self: flex-start;
     }
@@ -445,7 +494,7 @@
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .hero-ctas { flex-direction: column; align-items: flex-start; }
-      .card-metrics { gap: 20px; }
+      .card-metrics { gap: 16px; }
     }
   </style>
 </head>
@@ -459,8 +508,13 @@
         <li><a href="#work">The Work</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/my-process">Process</a></li>
-        <li><a href="#" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1B5phyGjlVl0t4TsXUP4TnsJMDVLRZ28G/view" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
       </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -532,11 +586,10 @@
                 <span class="metric-label">Engagement<br>to launch</span>
               </div>
             </div>
-            <span class="card-cta">View Case Study <span class="arrow">↗</span></span>
+            <span class="card-cta">View Case Study <span class="arrow">→</span></span>
           </div>
           <div class="card-image">
-            <!-- TODO: replace with MacBook+Air+(2022).png -->
-            <img src="https://placehold.co/700x500/161616/2A2A2A?text=" alt="Wegovy.com redesign">
+            <img src="/assets/images/home/wegovy-card.png" alt="Wegovy.com redesign" loading="lazy">
           </div>
         </a>
 
@@ -557,11 +610,10 @@
                 <span class="metric-label">Taps to<br>complete order</span>
               </div>
             </div>
-            <span class="card-cta">View Case Study <span class="arrow">↗</span></span>
+            <span class="card-cta">View Case Study <span class="arrow">→</span></span>
           </div>
           <div class="card-image">
-            <!-- TODO: replace with Wendy's_Tile.jpg -->
-            <img src="https://placehold.co/700x500/161616/2A2A2A?text=" alt="Wendy's ordering app">
+            <img src="/assets/images/home/wendys-card.jpg" alt="Wendy's ordering app" loading="lazy">
           </div>
         </a>
 
@@ -572,11 +624,10 @@
             <p class="card-brand">Virginia State University</p>
             <h3 class="card-title">A Digital Presence Worthy of Its Legacy</h3>
             <p class="card-desc">End-to-end UX strategy for Virginia State University — modernizing a 2009-era digital experience while honoring the legacy of one of America's longest-running HBCUs.</p>
-            <span class="card-cta">View Case Study <span class="arrow">↗</span></span>
+            <span class="card-cta">View Case Study <span class="arrow">→</span></span>
           </div>
           <div class="card-image">
-            <!-- TODO: replace with VSU_hero.jpg -->
-            <img src="https://placehold.co/700x500/161616/2A2A2A?text=" alt="Virginia State University website">
+            <img src="/assets/images/home/vsu-card.jpg" alt="Virginia State University website" loading="lazy">
           </div>
         </a>
 
@@ -587,11 +638,10 @@
             <p class="card-brand">Apex Tools</p>
             <h3 class="card-title">Revitalizing Three Professional Tool Brands at Once</h3>
             <p class="card-desc">Led the simultaneous digital relaunch of three professional tool brands — Gearwrench, Crescent, and SATA — with distinct brand identities built on shared infrastructure.</p>
-            <span class="card-cta">View Case Study <span class="arrow">↗</span></span>
+            <span class="card-cta">View Case Study <span class="arrow">→</span></span>
           </div>
           <div class="card-image">
-            <!-- TODO: replace with GW3.jpg -->
-            <img src="https://placehold.co/700x500/161616/2A2A2A?text=" alt="Apex Tools brand sites">
+            <img src="/assets/images/home/apex-card.jpg" alt="Apex Tools brand sites" loading="lazy">
           </div>
         </a>
 
@@ -602,11 +652,10 @@
             <p class="card-brand">Sherwin-Williams</p>
             <h3 class="card-title">A Multi-Brand Digital Transformation</h3>
             <p class="card-desc">Five consumer brand relaunches under one engagement — Krylon, Cabot, Purdy, Thompson's Water Seal, and Minwax — each distinct in voice, unified in architecture.</p>
-            <span class="card-cta">View Case Study <span class="arrow">↗</span></span>
+            <span class="card-cta">View Case Study <span class="arrow">→</span></span>
           </div>
           <div class="card-image">
-            <!-- TODO: replace with Layout.png -->
-            <img src="https://placehold.co/700x500/161616/2A2A2A?text=" alt="Sherwin-Williams brand sites">
+            <img src="/assets/images/home/sherwin-card.png" alt="Sherwin-Williams brand sites" loading="lazy">
           </div>
         </a>
 
@@ -632,6 +681,19 @@
     // Staggered hero fade-in on load
     document.querySelectorAll('.hero .fade-up').forEach((el, i) => {
       setTimeout(() => el.classList.add('visible'), 80 + i * 100);
+    });
+
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navEl = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navEl.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navEl.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
     });
   </script>
 
