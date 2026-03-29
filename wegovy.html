@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wegovy — Cody Eanes</title>
+  <meta name="description" content="Case study: Ground-up rebuild of Wegovy.com — UX strategy, content architecture, and an AI-architected wayfinding quiz with 45 unique outcome combinations.">
+  <link rel="canonical" href="https://codyeanes.com/wegovy">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wegovy — Cody Eanes">
+  <meta property="og:description" content="Case study: Ground-up rebuild of Wegovy.com — UX strategy, content architecture, and an AI-architected wayfinding quiz with 45 unique outcome combinations.">
+  <meta property="og:url" content="https://codyeanes.com/wegovy">
+  <meta property="og:site_name" content="Cody Eanes">
+  <meta property="og:image" content="https://codyeanes.com/assets/images/about/headshot.jpg">
+  <meta property="og:image:alt" content="Cody Eanes — Design Leader">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Design Tokens ─── */
+    :root {
+      --bg:             #0D0D0D;
+      --surface:        #161616;
+      --surface-alt:    #1E1E1E;
+      --border:         #2A2A2A;
+      --text-primary:   #F2F2F2;
+      --text-secondary: #8A8A8A;
+      --text-muted:     #555555;
+      --accent:         #51d9d0;
+      --accent-hover:   #6ee4dc;
+      --font-display:   'Roboto', sans-serif;
+      --font-body:      'DM Sans', sans-serif;
+      --container-max:  1200px;
+      --container-pad:  clamp(24px, 5vw, 80px);
+      --section-gap:    clamp(80px, 12vw, 160px);
+      --content-gap:    clamp(40px, 6vw, 80px);
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Utilities ─── */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1.5px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+    }
+
+    /* ─── Button ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--accent);
+      color: #0D0D0D;
+      padding: 16px 32px;
+      border-radius: 0;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 150ms ease;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary .arrow { transition: transform 150ms ease; }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+
+    /* ─── Navigation ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(13, 13, 13, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-wordmark {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      position: relative;
+      transition: color 150ms ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active::after,
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ─── Hamburger ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0; right: 0;
+        background: rgba(13, 13, 13, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 24px var(--container-pad);
+        gap: 24px;
+      }
+      nav.nav-open .nav-links { display: flex; }
+    }
+
+    /* ─── Case Hero ─── */
+    .case-hero {
+      padding-top: 64px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .case-hero-content {
+      padding-top: clamp(64px, 8vw, 112px);
+      padding-bottom: clamp(48px, 6vw, 80px);
+    }
+    .hero-eyebrow { margin-bottom: 24px; }
+    .case-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 8vw, 112px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .case-hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: -0.01em;
+    }
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      margin-top: clamp(40px, 5vw, 64px);
+    }
+    .case-meta-item {
+      padding: 24px 16px;
+      border-right: 1px solid var(--border);
+    }
+    .case-meta-item:last-child { border-right: none; }
+    .meta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .meta-value {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      .case-meta { grid-template-columns: 1fr 1fr; }
+      .case-meta-item:nth-child(2) { border-right: none; }
+      .case-meta-item:nth-child(3),
+      .case-meta-item:nth-child(4) { border-top: 1px solid var(--border); }
+      .case-meta-item:nth-child(4) { border-right: none; }
+    }
+
+    /* ─── Section Base ─── */
+    .cs-section {
+      padding: var(--section-gap) 0;
+      border-top: 1px solid var(--border);
+    }
+    .cs-section.on-surface { background: var(--surface); }
+    .cs-section.on-surface-alt { background: var(--surface-alt); }
+    .section-eyebrow { margin-bottom: 24px; }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .section-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 640px;
+    }
+    .section-body + .section-body { margin-top: 16px; }
+    .section-body strong { font-weight: 500; color: var(--text-primary); }
+
+    /* ─── Overview ─── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(48px, 6vw, 80px);
+      align-items: start;
+    }
+    .overview-image {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .overview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .overview-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Problem Cards ─── */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .problem-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: clamp(24px, 3vw, 40px);
+    }
+    .problem-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .problem-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    @media (max-width: 640px) {
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Journey Stages ─── */
+    .journey-stages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+    .journey-stage {
+      padding: clamp(24px, 3vw, 40px);
+      border-right: 1px solid var(--border);
+    }
+    .journey-stage:last-child { border-right: none; }
+    .stage-number {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800;
+      color: rgba(81, 217, 208, 0.12);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stage-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .stage-subtitle {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    @media (max-width: 768px) {
+      .journey-stages { grid-template-columns: 1fr 1fr; }
+      .journey-stage:nth-child(2) { border-right: none; }
+      .journey-stage:nth-child(3),
+      .journey-stage:nth-child(4) { border-top: 1px solid var(--border); }
+    }
+    @media (max-width: 480px) {
+      .journey-stages { grid-template-columns: 1fr; }
+      .journey-stage { border-right: none; border-top: 1px solid var(--border); }
+      .journey-stage:first-child { border-top: none; }
+    }
+
+    /* ─── Quiz Section ─── */
+    .quiz-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin: 40px 0 32px;
+    }
+    .quiz-number {
+      font-family: var(--font-display);
+      font-size: clamp(96px, 14vw, 180px);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+    }
+    .quiz-number-label {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .quiz-number-label strong {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .quiz-number-label span {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .quiz-pullquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      border-left: 3px solid var(--accent);
+      background: rgba(81, 217, 208, 0.04);
+    }
+    .quiz-pullquote p {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .quiz-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 5vw, 64px);
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .quiz-details h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .quiz-details p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .tool-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .tool-tag {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 640px) {
+      .quiz-details { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Execution Grid ─── */
+    .execution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+    .execution-item {
+      padding: clamp(24px, 3vw, 40px);
+      border-right: 1px solid var(--border);
+    }
+    .execution-item:last-child { border-right: none; }
+    .execution-item h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .execution-item ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .execution-item li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+    }
+    .execution-item li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      .execution-grid { grid-template-columns: 1fr; }
+      .execution-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .execution-item:last-child { border-bottom: none; }
+    }
+
+    /* ─── Outcomes ─── */
+    .outcomes-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+    .outcome-stat {
+      padding: clamp(24px, 3vw, 48px);
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .outcome-stat:last-child { border-right: none; }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .outcomes-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 48px;
+      list-style: none;
+    }
+    .outcomes-list li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+    .outcomes-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    @media (max-width: 640px) {
+      .outcomes-stats { grid-template-columns: 1fr; }
+      .outcome-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .outcome-stat:last-child { border-bottom: none; }
+      .outcomes-list { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Reflection ─── */
+    .reflection-section {
+      padding: var(--section-gap) 0;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .reflection-inner { max-width: 800px; }
+    .reflection-quote {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      font-style: italic;
+      margin-top: 24px;
+    }
+    .reflection-quote::before { content: '\201C'; color: var(--accent); }
+    .reflection-quote::after  { content: '\201D'; color: var(--accent); }
+
+    /* ─── Next Project ─── */
+    .next-project {
+      padding: clamp(64px, 8vw, 96px) 0;
+      border-top: 1px solid var(--border);
+    }
+    .next-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .next-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .next-link .next-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      transition: color 200ms ease;
+    }
+    .next-link .next-arrow {
+      font-size: clamp(24px, 3vw, 40px);
+      color: var(--accent);
+      transition: transform 200ms ease;
+    }
+    .next-link:hover .next-title { color: var(--accent); }
+    .next-link:hover .next-arrow { transform: translateX(8px); }
+
+    /* ─── Footer CTA ─── */
+    .footer-cta {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: var(--section-gap) 0 clamp(48px, 6vw, 80px);
+    }
+    .footer-cta .eyebrow { margin-bottom: 24px; }
+    .footer-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .footer-cta p {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+    .footer-bottom {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-bottom a:hover { color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-wordmark">Cody Eanes</a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">The Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/my-process">Process</a></li>
+        <li><a href="https://drive.google.com/file/d/1B5phyGjlVl0t4TsXUP4TnsJMDVLRZ28G/view" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:4px;">Resume <span>↗</span></a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Case Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="case-hero-content">
+        <p class="eyebrow hero-eyebrow fade-up">Case Study</p>
+        <h1 class="fade-up">Wegovy</h1>
+        <p class="case-hero-subtitle fade-up">Designing A New Experience For Change Seekers</p>
+      </div>
+      <div class="case-meta fade-up">
+        <div class="case-meta-item">
+          <p class="meta-label">Brand</p>
+          <p class="meta-value">Wegovy / Novo Nordisk</p>
+        </div>
+        <div class="case-meta-item">
+          <p class="meta-label">Role</p>
+          <p class="meta-value">UX Director</p>
+        </div>
+        <div class="case-meta-item">
+          <p class="meta-label">Duration</p>
+          <p class="meta-value">5 Months</p>
+        </div>
+        <div class="case-meta-item">
+          <p class="meta-label">Scope</p>
+          <p class="meta-value">Full Site Rebuild</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Project -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="overview-grid">
+        <div>
+          <p class="eyebrow section-eyebrow fade-up">The Project</p>
+          <p class="section-body fade-up">I led the ground-up rebuild of Wegovy.com, directing UX strategy, content architecture, and client relationships across a five-month engagement. Working alongside a UI Director, content strategists, and copywriters, I owned the experience vision from kickoff through launch — facilitating workshops, leading wireframe development, and serving as the primary point of contact for stakeholder communication and developer support during the AEM build.</p>
+          <p class="section-body fade-up">This project also marked a milestone in how I leverage AI as a design tool, using ChatGPT, Claude, and Figma Make to architect a wayfinding quiz with <strong>45 unique outcome combinations</strong>.</p>
+        </div>
+        <div class="overview-image fade-up">
+          <img src="/assets/images/wegovy/overview.png" alt="Wegovy.com redesign — MacBook mockup" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="cs-section on-surface">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">The Problem</p>
+      <h2 class="section-heading fade-up">Two things needed to change.</h2>
+      <div class="problem-grid">
+        <div class="problem-card fade-up">
+          <p class="problem-label">01 — Accessibility</p>
+          <h3>A site that couldn't be used by everyone</h3>
+          <p>Text in images. Insufficient contrast. Compliance failures at nearly every level. The site couldn't meet WCAG standards — a critical failure for a healthcare product in a regulated space.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <p class="problem-label">02 — Experience</p>
+          <h3>Clinical documentation framed as a consumer journey</h3>
+          <p>Wegovy is a lifestyle product. The site read like a pharmaceutical package insert. The architecture, tone, and visual design all prioritized compliance over connection — leaving real patients without a clear path forward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Reframe -->
+  <section class="cs-section">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">Strategic Reframe</p>
+      <h2 class="section-heading fade-up">Organizing around<br>the patient journey.</h2>
+      <p class="section-body fade-up">We replaced a compliance-first architecture with a four-stage consumer journey — built around the questions real patients actually ask, in the order they ask them.</p>
+      <div class="journey-stages">
+        <div class="journey-stage fade-up">
+          <div class="stage-number">01</div>
+          <h3 class="stage-title">Is Wegovy Right for Me</h3>
+          <p class="stage-subtitle">Education and eligibility — meeting patients before they've decided.</p>
+        </div>
+        <div class="journey-stage fade-up">
+          <div class="stage-number">02</div>
+          <h3 class="stage-title">How Do I Get It</h3>
+          <p class="stage-subtitle">Prescription pathways explained clearly, without clinical jargon.</p>
+        </div>
+        <div class="journey-stage fade-up">
+          <div class="stage-number">03</div>
+          <h3 class="stage-title">What Will I Pay</h3>
+          <p class="stage-subtitle">Cost, insurance, and savings programs — the questions that kill conversion.</p>
+        </div>
+        <div class="journey-stage fade-up">
+          <div class="stage-number">04</div>
+          <h3 class="stage-title">Getting Started</h3>
+          <p class="stage-subtitle">Onboarding and expectations — setting patients up for success after they've decided.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Wayfinding Quiz -->
+  <section class="cs-section on-surface-alt">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">The Wayfinding Quiz</p>
+      <h2 class="section-heading fade-up">Five questions.<br>45 unique outcomes.</h2>
+      <div class="quiz-stat fade-up">
+        <span class="quiz-number">45</span>
+        <div class="quiz-number-label">
+          <strong>unique CTA<br>combinations</strong>
+          <span>mapped by AI</span>
+        </div>
+      </div>
+      <p class="section-body fade-up">The quiz was the most technically complex piece of the project — and the most human. The challenge wasn't writing five questions. It was ensuring every combination of answers led somewhere meaningful, not a dead end or a generic page.</p>
+      <p class="section-body fade-up">I used AI (ChatGPT and Claude) to architect the full decision tree — mapping all possible answer combinations to appropriate outcome CTAs. What would have taken weeks of spreadsheet logic took days. Figma Make handled the prototype, letting us test real paths with stakeholders before a line of AEM code was written.</p>
+      <div class="quiz-pullquote fade-up">
+        <p>AI didn't replace the thinking — it accelerated it.</p>
+      </div>
+      <div class="quiz-details">
+        <div class="fade-up">
+          <h3>How It Was Built</h3>
+          <p>Decision tree architecture built collaboratively with AI. Every path validated against user journey stages. Prototype in Figma Make for stakeholder review before a single line of AEM code was written.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">ChatGPT</span>
+            <span class="tool-tag">Claude</span>
+            <span class="tool-tag">Figma Make</span>
+          </div>
+        </div>
+        <div class="fade-up">
+          <h3>Client Reaction</h3>
+          <p>Overwhelmingly positive. The quiz became one of the defining features of the new site — a tangible example of AI as a design tool, not a replacement for design thinking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Execution -->
+  <section class="cs-section on-surface">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">Execution</p>
+      <h2 class="section-heading fade-up">Built right, from the beginning.</h2>
+      <div class="execution-grid">
+        <div class="execution-item fade-up">
+          <h3>Accessibility Leadership</h3>
+          <ul>
+            <li>WCAG-compliant architecture from day one</li>
+            <li>Eliminated all text-in-image patterns</li>
+            <li>Established contrast standards and focus states</li>
+            <li>Full keyboard navigation coverage</li>
+            <li>Structured for screen reader compatibility</li>
+          </ul>
+        </div>
+        <div class="execution-item fade-up">
+          <h3>Design System</h3>
+          <ul>
+            <li>First implementation of new Novo Nordisk design system</li>
+            <li>Token-based architecture for cross-product scalability</li>
+            <li>Designed for reuse across Ozempic, Rybelsus, and future products</li>
+            <li>Brand-aligned while staying platform-consistent</li>
+          </ul>
+        </div>
+        <div class="execution-item fade-up">
+          <h3>Partnership Model</h3>
+          <ul>
+            <li>Workshop-based alignment at kickoff and key milestones</li>
+            <li>Direct stakeholder access earned by mid-project</li>
+            <li>Collaborative MLR (medical-legal-regulatory) process</li>
+            <li>Primary AEM liaison through the full build phase</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section class="cs-section">
+    <div class="container">
+      <p class="eyebrow section-eyebrow fade-up">Outcomes</p>
+      <h2 class="section-heading fade-up">Shipped in five months.</h2>
+      <div class="outcomes-stats fade-up">
+        <div class="outcome-stat">
+          <p class="stat-value">5</p>
+          <p class="stat-label">Months from<br>kickoff to launch</p>
+        </div>
+        <div class="outcome-stat">
+          <p class="stat-value">45</p>
+          <p class="stat-label">Unique quiz<br>outcome paths</p>
+        </div>
+        <div class="outcome-stat">
+          <p class="stat-value">WCAG</p>
+          <p class="stat-label">Compliant from<br>the ground up</p>
+        </div>
+      </div>
+      <ul class="outcomes-list fade-up">
+        <li>NovoCare conversion and savings card signups as primary KPIs</li>
+        <li>Reduced bounce from misaligned entry page experiences</li>
+        <li>Accessible architecture built in, not retrofitted</li>
+        <li>Scalable token-based design system deployed</li>
+        <li>AI-powered wayfinding quiz live on site at launch</li>
+        <li>Experience quality tracked alongside conversion metrics</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="reflection-section">
+    <div class="container">
+      <div class="reflection-inner">
+        <p class="eyebrow section-eyebrow fade-up">Reflection</p>
+        <p class="reflection-quote fade-up">This project represents the fullest expression of how I lead. I did IC work when IC work was needed. I led when leadership was needed. I knew which moments called for which.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project -->
+  <section class="next-project">
+    <div class="container">
+      <p class="next-label">Next Case Study</p>
+      <a href="/wendys" class="next-link">
+        <h2 class="next-title">Wendy's</h2>
+        <span class="next-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <footer class="footer-cta">
+    <div class="container">
+      <span class="eyebrow">Let's Build Something</span>
+      <h2>Ready to ship<br>something great?</h2>
+      <p>If you're looking for a design leader who can run a workshop in the morning, challenge an engineering assumption in the afternoon, and ship something worth shipping — let's talk.</p>
+      <a href="mailto:cody@codyeanes.com" class="btn-primary">Hit me up <span class="arrow">→</span></a>
+      <div class="footer-bottom">
+        <p>© 2026 Cody Eanes</p>
+        <a href="https://eanescreative.co" target="_blank" rel="noopener">eanescreative.co ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.case-hero .fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 80 + i * 100);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll(
+      '.cs-section .fade-up, .reflection-section .fade-up, .next-project .fade-up'
+    ).forEach(el => observer.observe(el));
+
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navEl = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navEl.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navEl.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
