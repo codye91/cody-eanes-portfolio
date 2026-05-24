@@ -350,24 +350,16 @@ export default function SectionBuilder({
   onChange: (updated: ProjectSection[]) => void
 }) {
   const sectionOptions = getSectionOptions()
-  const [expandedIdx, setExpandedIdx] = [
-    // Simple local expand state baked in via closure — avoids lifting state
-    ...(() => {
-      // We use a module-level ref trick: just render all open
-      // (admins typically work on one section at a time anyway)
-      return [-1, (_: number) => {}]
-    })(),
-  ]
 
   function addSection(type: string) {
     const defaults = SECTION_DEFAULTS[type] ?? {}
-    const newSection = { type, ...defaults } as ProjectSection
+    const newSection = { type, ...defaults } as unknown as ProjectSection
     onChange([...sections, newSection])
   }
 
   function updateSection(idx: number, updated: SectionData) {
     const next = [...sections]
-    next[idx] = updated as ProjectSection
+    next[idx] = updated as unknown as ProjectSection
     onChange(next)
   }
 
