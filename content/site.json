@@ -1,0 +1,225 @@
+{
+  "hero": {
+    "eyebrow": "Design Leader · UX & Product Strategy · AI Integration",
+    "headline": "Howdy,\nI'm Cody.",
+    "subtext": "I direct design across complex products and the people who build them.",
+    "primaryCta": { "label": "View My Work", "href": "#work" },
+    "secondaryCta": { "label": "About Me", "href": "/about" }
+  },
+  "ticker": {
+    "testimonials": [
+      "Extremely proactive and is always willing to jump in and lend a helping hand",
+      "Thoughtful, articulate, and great at building trust with clients",
+      "A true self-starter, consistently taking initiative and driving solutions forward",
+      "An excellent presenter, articulating complex ideas clearly and persuasively",
+      "Consistently demonstrates the composure, strategic thinking, and leadership that make others want to learn from him"
+    ]
+  },
+  "workSection": {
+    "eyebrow": "Case Studies",
+    "heading": "Work that ships.",
+    "description": "These cases show how I lead teams, align stakeholders, and ship products that matter. Curious about my design process? <a href=\"/my-process\">Here's how I think.</a>"
+  },
+  "about": {
+    "eyebrow": "About Cody",
+    "heroHeadline": "Come on in,\ny'all!",
+    "heroSubtext": "I'm a design leader working toward Creative Director — building the products, teams, and AI-integrated processes that get us there.",
+    "headshotImage": "/images/about/headshot.jpg",
+    "bio": "Howdy! I'm a design leader based in Richmond, VA, focused on building user-centered products and the teams that ship them. I've spent my career moving from craft to strategy — and now I'm directing design across complex, multi-stakeholder engagements while building the skills that take leaders from execution to creative vision. I'm not interested in maintaining the status quo; I'm here to raise the bar.",
+    "facts": [
+      { "value": "10+", "label": "Years in UX" },
+      { "value": "15+", "label": "Brands Launched" },
+      { "value": "VML", "label": "WPP / Agency" },
+      { "value": "RVA", "label": "Richmond, VA" }
+    ],
+    "humanStuff": {
+      "body": "When I'm not in meetings or mentoring designers, you'll find me diving into video games, debating sneaker drops, or breaking down zone defenses. I'm a new dad and have fully embraced this chapter — tucked-in t-shirts and all. I'm also a pet parent to two huskies and a cat; they keep me grounded and occasionally interrupt video calls.",
+      "pullQuote": "Once upon a time, I dreamt of becoming a professional bowler like Norm Duke. That didn't pan out, but the focus, precision, and competitive drive stuck with me.",
+      "pullQuoteAttr": "And translated directly into how I approach design leadership."
+    },
+    "setsApart": {
+      "heading": "Economics, sales,\nand then design.",
+      "paragraphs": [
+        "What sets me apart is a diversified background in economics and sales. I don't just understand how to build great experiences — I understand how to articulate their business value. I'm as comfortable in a boardroom discussing ROI as I am in a design review discussing hierarchy and interaction patterns. That fluency makes me effective at aligning stakeholders, securing buy-in, and ensuring design decisions are made with business context — not just defended from outside it.",
+        "My foundation is classic double-diamond thinking, but my application has evolved — I focus less on personal craft and more on building systems, processes, and teams that consistently deliver user-centered outcomes. Before design, I was in sales advocating for technology adoption. My job wasn't pushing products — it was making them indispensable. That mindset still drives me."
+      ]
+    },
+    "howIWork": {
+      "heading": "AI as a strategic multiplier,\nnot a shortcut.",
+      "paragraphs": [
+        "I've led design in both Waterfall and Agile environments and know how to partner with engineering and product to find the right process for the problem — not force a methodology where it doesn't fit.",
+        "AI is now central to how I work. And the real opportunity isn't individual efficiency — it's reshaping how teams operate. If you're thinking about how AI changes the design practice at an organizational level, that's a conversation I'm ready to have."
+      ],
+      "aiProof": [
+        {
+          "stat": "45",
+          "title": "Outcome Wayfinding System",
+          "description": "Used ChatGPT + Claude to architect a quiz with 45 unique CTA combinations for Wegovy.com — logic no spreadsheet could map cleanly."
+        },
+        {
+          "stat": "10×",
+          "title": "Research Synthesis Speed",
+          "description": "AI-accelerated synthesis from user research: content inventories, friction analysis, and thematic clustering at a pace that reshapes sprint planning."
+        },
+        {
+          "stat": "VML",
+          "title": "Team Enablement Workshops",
+          "description": "Led internal workshops at VML helping designers build AI into their own workflows — because the leverage is at the team level, not the individual."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "email": "cody@codyeanes.com",
+    "resumeUrl": "https://drive.google.com/file/d/1B5phyGjlVl0t4TsXUP4TnsJMDVLRZ28G/view"
+  },
+  "footer": {
+    "eyebrow": "Let's Build Something",
+    "heading": "Hey, you're way\nbelow the fold!",
+    "description": "Whether you need a design leader who can run a workshop in the morning and challenge an engineering assumption in the afternoon — let's talk.",
+    "ctaLabel": "Hit me up",
+    "copyright": "© 2026 Cody Eanes",
+    "secondaryLink": { "label": "eanescreative.co ↗", "href": "https://eanescreative.co" }
+  },
+  "footerCaseStudy": {
+    "eyebrow": "Let's Build Something",
+    "heading": "Ready to ship\nsomething great?",
+    "description": "If you're looking for a design leader who can run a workshop in the morning, challenge an engineering assumption in the afternoon, and ship something worth shipping — let's talk.",
+    "ctaLabel": "Hit me up"
+  },
+  "myProcess": {
+    "phases": [
+      {
+        "number": "01",
+        "eyebrow": "Phase One",
+        "title": "Understanding the\nProblem Space",
+        "surface": false,
+        "columns": [
+          {
+            "heading": "Discovery & Research",
+            "items": [
+              "Stakeholder interviews to understand business goals and constraints",
+              "User research to uncover real needs and pain points",
+              "Competitive analysis to identify opportunities and patterns"
+            ],
+            "note": null,
+            "noteBold": null
+          },
+          {
+            "heading": "AI-Powered Content Analysis",
+            "items": [
+              "Analyze existing content for patterns and gaps",
+              "Extract key themes from user feedback at scale",
+              "Generate initial content inventories and audit reports"
+            ],
+            "note": "In practice: On a recent e-commerce redesign, I fed an entire website into ChatGPT to identify the top 10 friction points in the primary user flow — work that would've taken weeks happened in an afternoon.",
+            "noteBold": "In practice:"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "eyebrow": "Phase Two",
+        "title": "Making Sense\nof Chaos",
+        "surface": true,
+        "columns": [
+          {
+            "heading": "Heuristic Evaluation",
+            "items": [
+              "Nielsen's 10 usability heuristics",
+              "Accessibility standards (WCAG 2.2)",
+              "Industry-specific best practices"
+            ],
+            "note": null,
+            "noteBold": null
+          },
+          {
+            "heading": "Information Architecture",
+            "items": [
+              "Content buckets that group related information logically",
+              "User flow diagrams showing key pathways",
+              "Sitemaps that visualize the entire information ecosystem"
+            ],
+            "note": "A core belief: Good IA is invisible — users should find what they need without thinking about how it's organized. When navigation becomes the subject, something has already gone wrong.",
+            "noteBold": "A core belief:"
+          }
+        ]
+      },
+      {
+        "number": "03",
+        "eyebrow": "Phase Three",
+        "title": "Bringing Ideas\nto Life",
+        "surface": false,
+        "columns": [
+          {
+            "heading": "Wireframing & Prototyping",
+            "items": [
+              "Lo-fi wireframes to test information hierarchy",
+              "High-fidelity wireframes for design system work",
+              "Interactive prototypes for usability testing"
+            ],
+            "note": null,
+            "noteBold": null
+          },
+          {
+            "heading": "Design System Thinking",
+            "items": [
+              "Creating reusable component libraries",
+              "Documenting interaction patterns",
+              "Establishing design tokens for consistency"
+            ],
+            "note": "The reason this matters: It's not just about efficiency. It's about creating experiences that feel cohesive across every touchpoint — whether someone is on the homepage or a deeply nested product page.",
+            "noteBold": "The reason this matters:"
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "eyebrow": "Phase Four",
+        "title": "Collaboration\n& Refinement",
+        "surface": true,
+        "columns": [
+          {
+            "heading": "Developer Partnership",
+            "items": [
+              "Co-creating during the design phase to ensure feasibility",
+              "Providing detailed specs with interaction states and edge cases",
+              "Participating in sprint planning to prioritize features",
+              "Conducting design QA during implementation"
+            ],
+            "note": null,
+            "noteBold": null
+          },
+          {
+            "heading": "Iterative Improvement",
+            "items": [
+              "Monitor analytics and user feedback post-launch",
+              "Conduct usability testing on live products",
+              "Create optimization roadmaps based on data"
+            ],
+            "note": "The work doesn't end at launch. The best products I've shipped have been improved meaningfully in the 90 days after go-live — because that's when real usage data starts telling the truth.",
+            "noteBold": "The work doesn't end at launch."
+          }
+        ]
+      }
+    ],
+    "principles": [
+      {
+        "title": "AI-Augmented,\nHuman-Centered",
+        "body": "AI accelerates the work — synthesis, content analysis, logic mapping. But it doesn't replace the judgment calls. Every AI output runs through a human lens before it informs a decision."
+      },
+      {
+        "title": "Systems Over\nScreens",
+        "body": "I design patterns and components, not just individual interfaces. A screen is a snapshot. A system is a strategy — and it's what makes design scale without falling apart."
+      },
+      {
+        "title": "Collaborative\nby Design",
+        "body": "Stakeholders, developers, and users aren't interruptions to the process — they're inputs to it. The best design decisions I've made came from conversations I didn't expect to matter."
+      },
+      {
+        "title": "Data-Informed,\nNot Data-Driven",
+        "body": "Numbers tell you what happened. Research tells you why. I balance quantitative signals with qualitative understanding — because optimizing for metrics alone often produces products that test well and feel wrong."
+      }
+    ]
+  }
+}

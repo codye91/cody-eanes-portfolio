@@ -1,0 +1,1060 @@
+[
+  {
+    "slug": "wegovy",
+    "order": 1,
+    "visible": true,
+    "reversed": false,
+    "card": {
+      "role": "UX Director",
+      "brand": "Wegovy",
+      "title": "Designing A New Experience For Change Seekers",
+      "description": "A ground-up rebuild of Wegovy.com \u2014 shifting a clinical pharma site toward a consumer-centered lifestyle journey. I directed UX strategy, content architecture, and an AI-architected wayfinding quiz with 45 unique outcome combinations.",
+      "metrics": [
+        {
+          "value": "45",
+          "label": "Unique quiz\noutcomes"
+        },
+        {
+          "value": "5mo",
+          "label": "Engagement\nto launch"
+        }
+      ],
+      "image": "/images/home/wegovy-card.png",
+      "imageAlt": "Wegovy.com redesign"
+    },
+    "hero": {
+      "title": "Wegovy",
+      "subtitle": "Designing A New Experience For Change Seekers",
+      "meta": [
+        {
+          "label": "Brand",
+          "value": "Wegovy / Novo Nordisk"
+        },
+        {
+          "label": "Role",
+          "value": "UX Director"
+        },
+        {
+          "label": "Duration",
+          "value": "5 Months"
+        },
+        {
+          "label": "Scope",
+          "value": "Full Site Rebuild"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "projectOverview",
+        "background": "default",
+        "eyebrow": "The Project",
+        "paragraphs": [
+          "I led the ground-up rebuild of Wegovy.com, directing UX strategy, content architecture, and client relationships across a five-month engagement. Working alongside a UI Director, content strategists, and copywriters, I owned the experience vision from kickoff through launch \u2014 facilitating workshops, leading wireframe development, and serving as the primary point of contact for stakeholder communication and developer support during the AEM build.",
+          "This project also marked a milestone in how I leverage AI as a design tool, using ChatGPT, Claude, and Figma Make to architect a wayfinding quiz with <strong>45 unique outcome combinations</strong>."
+        ],
+        "image": "/images/wegovy/overview.png",
+        "imageAlt": "Wegovy.com redesign \u2014 MacBook mockup"
+      },
+      {
+        "type": "problemCards",
+        "background": "surface",
+        "eyebrow": "The Problem",
+        "heading": "Two things needed to change.",
+        "cards": [
+          {
+            "label": "01 \u2014 Accessibility",
+            "title": "A site that couldn't be used by everyone",
+            "body": "Text in images. Insufficient contrast. Compliance failures at nearly every level. The site couldn't meet WCAG standards \u2014 a critical failure for a healthcare product in a regulated space."
+          },
+          {
+            "label": "02 \u2014 Experience",
+            "title": "Clinical documentation framed as a consumer journey",
+            "body": "Wegovy is a lifestyle product. The site read like a pharmaceutical package insert. The architecture, tone, and visual design all prioritized compliance over connection \u2014 leaving real patients without a clear path forward."
+          }
+        ]
+      },
+      {
+        "type": "journeyStages",
+        "background": "default",
+        "eyebrow": "Strategic Reframe",
+        "heading": "Organizing around\nthe patient journey.",
+        "body": "We replaced a compliance-first architecture with a four-stage consumer journey \u2014 built around the questions real patients actually ask, in the order they ask them.",
+        "stages": [
+          {
+            "number": "01",
+            "title": "Is Wegovy Right for Me",
+            "subtitle": "Education and eligibility \u2014 meeting patients before they've decided."
+          },
+          {
+            "number": "02",
+            "title": "How Do I Get It",
+            "subtitle": "Prescription pathways explained clearly, without clinical jargon."
+          },
+          {
+            "number": "03",
+            "title": "What Will I Pay",
+            "subtitle": "Cost, insurance, and savings programs \u2014 the questions that kill conversion."
+          },
+          {
+            "number": "04",
+            "title": "Getting Started",
+            "subtitle": "Onboarding and expectations \u2014 setting patients up for success after they've decided."
+          }
+        ]
+      },
+      {
+        "type": "bigStat",
+        "background": "surface-alt",
+        "eyebrow": "The Wayfinding Quiz",
+        "heading": "Five questions.\n45 unique outcomes.",
+        "number": "45",
+        "numberStrong": "unique CTA\ncombinations",
+        "numberSub": "mapped by AI",
+        "bodyTexts": [
+          "The quiz was the most technically complex piece of the project \u2014 and the most human. The challenge wasn't writing five questions. It was ensuring every combination of answers led somewhere meaningful, not a dead end or a generic page.",
+          "I used AI (ChatGPT and Claude) to architect the full decision tree \u2014 mapping all possible answer combinations to appropriate outcome CTAs. What would have taken weeks of spreadsheet logic took days. Figma Make handled the prototype, letting us test real paths with stakeholders before a line of AEM code was written."
+        ],
+        "pullquote": "AI didn't replace the thinking \u2014 it accelerated it.",
+        "details": [
+          {
+            "heading": "How It Was Built",
+            "body": "Decision tree architecture built collaboratively with AI. Every path validated against user journey stages. Prototype in Figma Make for stakeholder review before a single line of AEM code was written.",
+            "toolTags": [
+              "ChatGPT",
+              "Claude",
+              "Figma Make"
+            ]
+          },
+          {
+            "heading": "Client Reaction",
+            "body": "Overwhelmingly positive. The quiz became one of the defining features of the new site \u2014 a tangible example of AI as a design tool, not a replacement for design thinking."
+          }
+        ]
+      },
+      {
+        "type": "executionGrid",
+        "background": "surface",
+        "eyebrow": "Execution",
+        "heading": "Built right, from the beginning.",
+        "columns": [
+          {
+            "title": "Accessibility Leadership",
+            "items": [
+              "WCAG-compliant architecture from day one",
+              "Eliminated all text-in-image patterns",
+              "Established contrast standards and focus states",
+              "Full keyboard navigation coverage",
+              "Structured for screen reader compatibility"
+            ]
+          },
+          {
+            "title": "Design System",
+            "items": [
+              "First implementation of new Novo Nordisk design system",
+              "Token-based architecture for cross-product scalability",
+              "Designed for reuse across Ozempic, Rybelsus, and future products",
+              "Brand-aligned while staying platform-consistent"
+            ]
+          },
+          {
+            "title": "Partnership Model",
+            "items": [
+              "Workshop-based alignment at kickoff and key milestones",
+              "Direct stakeholder access earned by mid-project",
+              "Collaborative MLR (medical-legal-regulatory) process",
+              "Primary AEM liaison through the full build phase"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "background": "default",
+        "eyebrow": "Outcomes",
+        "heading": "Shipped in five months.",
+        "stats": [
+          {
+            "value": "5",
+            "label": "Months from\nkickoff to launch"
+          },
+          {
+            "value": "45",
+            "label": "Unique quiz\noutcome paths"
+          },
+          {
+            "value": "WCAG",
+            "label": "Compliant from\nthe ground up"
+          }
+        ],
+        "list": [
+          "NovoCare conversion and savings card signups as primary KPIs",
+          "Reduced bounce from misaligned entry page experiences",
+          "Accessible architecture built in, not retrofitted",
+          "Scalable token-based design system deployed",
+          "AI-powered wayfinding quiz live on site at launch",
+          "Experience quality tracked alongside conversion metrics"
+        ]
+      }
+    ],
+    "reflection": {
+      "quote": "This project represents the fullest expression of how I lead. I did IC work when IC work was needed. I led when leadership was needed. I knew which moments called for which.",
+      "followUp": null
+    },
+    "nextProject": {
+      "slug": "wendys",
+      "title": "Wendy's",
+      "blurb": null
+    }
+  },
+  {
+    "slug": "wendys",
+    "order": 2,
+    "visible": true,
+    "reversed": true,
+    "card": {
+      "role": "ACD, Product Design",
+      "brand": "Wendy's",
+      "title": "Finding The 'Beef' In New, More Efficient Ways",
+      "description": "A year embedded with Wendy's product team, redesigning their digital ordering experience from the ground up. Result: 70% fewer interactions to complete an order.",
+      "metrics": [
+        {
+          "value": "70%",
+          "label": "Fewer\ninteractions"
+        },
+        {
+          "value": "30\u219210",
+          "label": "Taps to\ncomplete order"
+        }
+      ],
+      "image": "/images/home/wendys-card.jpg",
+      "imageAlt": "Wendy's ordering app"
+    },
+    "hero": {
+      "title": "Wendy's",
+      "subtitle": "Finding The 'Beef' In New, More Efficient Ways",
+      "meta": [
+        {
+          "label": "Brand",
+          "value": "Wendy's"
+        },
+        {
+          "label": "Role",
+          "value": "ACD, Product Design"
+        },
+        {
+          "label": "Duration",
+          "value": "2 Years Embedded"
+        },
+        {
+          "label": "Scope",
+          "value": "Digital Ordering App"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "projectOverview",
+        "background": "default",
+        "eyebrow": "The Project",
+        "paragraphs": [
+          "As the sole design lead on Wendy's digital ordering squad, I spent a year embedded with the product and engineering teams focused on one mission: <strong>make ordering faster.</strong>",
+          "The competitive landscape demanded it. QSR value wars were intensifying. Competitors were shipping leaner flows. And our own data confirmed what we already suspected \u2014 too many taps, too many screens standing between a customer and their order.",
+          "The result: a <strong>70% reduction</strong> in the interactions required to complete an order."
+        ],
+        "image": "/images/wendys/overview.png",
+        "imageAlt": "Wendy's digital ordering app"
+      },
+      {
+        "type": "briefCallout",
+        "background": "surface",
+        "eyebrow": "The Brief",
+        "heading": "One sentence that\nset the standard.",
+        "quote": "I want to be able to order Wendy's at a red light.",
+        "source": "The brief, verbatim",
+        "bodyTexts": [
+          "That one sentence did more to focus the work than any requirements document could. Every design decision had a test: could a driver complete this in the span of a red light? If not, something needed to change.",
+          "The stakes were concrete. Competitors were already shipping faster. User research confirmed the scale of the problem \u2014 <strong>30+ interactions</strong> to complete a single order. But the path forward wasn't obvious, because not everyone agreed there was a problem."
+        ]
+      },
+      {
+        "type": "pocketsGrid",
+        "background": "default",
+        "eyebrow": "The Work",
+        "heading": "Three pockets of change.",
+        "body": "The redesign wasn't a wholesale rebuild \u2014 it was surgical. We identified three distinct areas where friction compounded and engineered each one down independently.",
+        "pockets": [
+          {
+            "number": "01",
+            "title": "Location",
+            "problem": "Five decisions before users could even see a menu. New user setup was a maze. Returning users had to re-confirm everything they'd already told us.",
+            "solution": "Defaulting logic built around recent preferences. Streamlined new user setup. Location intelligence that worked in the background, not in the way.",
+            "impact": "\u20135 taps before ordering even began"
+          },
+          {
+            "number": "02",
+            "title": "Menu",
+            "problem": "Combo building required separate screens for every modification. Each customization felt like its own journey. The path from browsing to bag was never clear.",
+            "solution": "Consolidated customization into a single scrollable interaction. Smarter defaults surfaced the most common modifications first. A shorter, cleaner path straight to bag.",
+            "impact": "Dramatic reduction in interactions per item"
+          },
+          {
+            "number": "03",
+            "title": "Checkout",
+            "problem": "The bag screen tried to do everything at once \u2014 order review, payment, pickup options, upsells, loyalty rewards. The result was a wall of decisions that caused errors and abandonment.",
+            "solution": "Split into two purpose-built screens: order verification first, payment and logistics second. Each screen had one job. Users moved faster and made fewer mistakes.",
+            "impact": "Fewer errors, faster completion"
+          }
+        ]
+      },
+      {
+        "type": "bigStat",
+        "background": "surface-alt",
+        "eyebrow": "The Number",
+        "heading": "Seventy percent.",
+        "number": "70",
+        "numberStrong": "% fewer\ninteractions",
+        "numberSub": "30+ taps \u2192 under 10",
+        "bodyTexts": [
+          "That's the headline. But the number only happened because every other thing fell into place first \u2014 the research, the trust, the engineering relationships, the stakeholder work. The design was almost the easy part."
+        ],
+        "pullquote": "70% reduction is the headline. The real work was creating the conditions that made those changes possible.",
+        "details": [
+          {
+            "heading": "App Store Validation",
+            "body": "The improvements were visible enough that users wrote about them. App Store reviews specifically called out the faster ordering experience \u2014 unprompted feedback that confirmed the reduction wasn't just measurable, it was felt."
+          },
+          {
+            "heading": "Design \u2192 Advocacy",
+            "body": "The Director of Product, initially one of the harder relationships to navigate, became a genuine design advocate by the end of the engagement. That trust outlasted the project \u2014 and opened doors that design output alone never would have."
+          }
+        ]
+      },
+      {
+        "type": "executionGrid",
+        "background": "surface",
+        "eyebrow": "The Real Work",
+        "heading": "People problems.",
+        "bodyTexts": [
+          "A significant portion of early research feedback insisted the app was fine. \"Loyalists\" \u2014 users who had adapted to every inefficiency \u2014 confused familiarity with quality. The key stakeholder on the original build fell into this camp too.",
+          "The solution wasn't better designs. It was better evidence. User data became the only currency that mattered."
+        ],
+        "columns": [
+          {
+            "title": "The Loyalist Problem",
+            "items": [
+              "Power users had adapted to every inefficiency",
+              "Familiarity was being mistaken for usability",
+              "User research had to do the heavy lifting",
+              "Data \u2014 not opinion \u2014 was the only argument that landed",
+              "The resistant stakeholder was eventually won over by the numbers"
+            ]
+          },
+          {
+            "title": "Stakeholder Navigation",
+            "items": [
+              "Built trust with the Director of Product as executive advocate",
+              "Earned direct stakeholder access through demonstrated judgment",
+              "The relationships built mattered as much as the work shipped",
+              "Cross-functional credibility opened doors the work alone couldn't"
+            ]
+          },
+          {
+            "title": "Engineering Partnership",
+            "items": [
+              "Offshore team across multiple time zones",
+              "Deliberate relationship-building from day one",
+              "Platform migration to Flutter enabled a proper design system",
+              "Component library built for longevity, not just the next sprint",
+              "Designers stepped into leadership of ongoing initiatives"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "background": "default",
+        "eyebrow": "Outcomes",
+        "heading": "A year of embedded work.",
+        "stats": [
+          {
+            "value": "70%",
+            "label": "Reduction in\norder interactions"
+          },
+          {
+            "value": "<10",
+            "label": "Taps to place\na complete order"
+          },
+          {
+            "value": "\u20135",
+            "label": "Pre-menu taps\neliminated"
+          }
+        ],
+        "list": [
+          "30+ interactions reduced to under 10 to complete an order",
+          "Design system and component library deployed on Flutter",
+          "Director of Product became a genuine design advocate",
+          "Cross-functional relationships outlasted the engagement",
+          "Designers stepped into leadership of ongoing initiatives",
+          "App Store reviews specifically called out ordering speed"
+        ]
+      }
+    ],
+    "reflection": {
+      "quote": "This project reinforced something I've come to believe strongly: the hardest problems in product design aren't design problems. They're people problems.",
+      "followUp": "70% is the headline. But the real work was building the trust, navigating the resistance, and creating the conditions that made those changes possible in the first place."
+    },
+    "nextProject": {
+      "slug": "virginia-state-university",
+      "title": "Virginia State University",
+      "blurb": null
+    }
+  },
+  {
+    "slug": "virginia-state-university",
+    "order": 3,
+    "visible": true,
+    "reversed": false,
+    "card": {
+      "role": "UX Lead",
+      "brand": "Virginia State University",
+      "title": "A Digital Presence Worthy of Its Legacy",
+      "description": "End-to-end UX strategy for Virginia State University \u2014 modernizing a 2009-era digital experience while honoring the legacy of one of America's longest-running HBCUs.",
+      "metrics": [],
+      "image": "/images/home/vsu-card.jpg",
+      "imageAlt": "Virginia State University website"
+    },
+    "hero": {
+      "title": "Virginia State\nUniversity",
+      "subtitle": "A Digital Presence Worthy of Its Legacy",
+      "meta": [
+        {
+          "label": "Brand",
+          "value": "Virginia State University"
+        },
+        {
+          "label": "Role",
+          "value": "UX Lead"
+        },
+        {
+          "label": "Context",
+          "value": "Remote, COVID 2020"
+        },
+        {
+          "label": "Scope",
+          "value": "University Website"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "projectOverview",
+        "background": "default",
+        "eyebrow": "The Project",
+        "paragraphs": [
+          "As UX Lead, I directed end-to-end research and design strategy for Virginia State University's digital transformation \u2014 a remote engagement conducted during COVID in 2020, partnering with a UX Architect to modernize one of the nation's longest-running HBCUs.",
+          "The scope was substantial: <strong>100+ pages</strong> organized across six primary navigation trees, serving five distinct audience groups with fundamentally different needs and mental models.",
+          "The tools were Sketch, Craft, and InVision. The challenge was far larger than the toolset."
+        ],
+        "image": "/images/vsu/overview.jpg",
+        "imageAlt": "Virginia State University website redesign"
+      },
+      {
+        "type": "contextCards",
+        "background": "surface",
+        "eyebrow": "The Opportunity",
+        "heading": "A legacy institution.\nA dated presence.",
+        "body": "Virginia State University holds a distinguished legacy as one of the nation's longest-running HBCUs. But in 2020, its web presence reflected a 2009-era experience \u2014 a gap that mattered more than ever in a competitive higher education landscape.",
+        "cards": [
+          {
+            "label": "01 \u2014 The Gap",
+            "title": "Legacy institution, dated digital reality",
+            "body": "Higher education is a buyer's market. Prospective students evaluate institutions digitally before they ever set foot on campus. VSU was competing alongside peer HBCUs \u2014 Howard, Hampton, Spelman \u2014 with a site that couldn't tell its story or serve its community."
+          },
+          {
+            "label": "02 \u2014 The Mission",
+            "title": "Modernize without erasing the identity",
+            "body": "The goal wasn't just a visual refresh. It was rebuilding the digital ecosystem to serve a diverse audience, reinforce brand equity in a crowded landscape, and capture the spirit of campus life \u2014 all without sacrificing accessibility compliance."
+          }
+        ]
+      },
+      {
+        "type": "audienceGrid",
+        "background": "default",
+        "eyebrow": "Research & Personas",
+        "heading": "Five audiences.\nOne unified framework.",
+        "bigNumber": "5",
+        "bigNumberStrong": "distinct\naudience groups",
+        "bigNumberSub": "hypothesis-driven survey methodology",
+        "body": "Research began with a hypothesis-driven survey methodology across all five audience groups \u2014 each with different goals, different entry points, and different definitions of success on the site.",
+        "audiences": [
+          {
+            "number": "01",
+            "title": "Current Students",
+            "note": "Navigating academics, registration, campus resources. Efficiency above everything."
+          },
+          {
+            "number": "02",
+            "title": "Prospective Students",
+            "note": "Evaluating VSU against peer institutions. First impression is the only impression."
+          },
+          {
+            "number": "03",
+            "title": "Parents",
+            "note": "Seeking safety, cost, and outcomes information. Trust-building at every step."
+          },
+          {
+            "number": "04",
+            "title": "Alumni",
+            "note": "Giving, reconnecting, staying engaged. Emotional connection over utility."
+          },
+          {
+            "number": "05",
+            "title": "Faculty & Staff",
+            "note": "Administrative access, departmental visibility, institutional tools."
+          }
+        ],
+        "pullquote": "When debates arose about navigation priorities or content hierarchy, we could return to the personas and ask: \"Who are we solving for here, and what do they actually need?\"",
+        "details": [
+          {
+            "heading": "Personas as Decision Tools",
+            "body": "The five personas weren't deliverables \u2014 they were instruments. They shaped every IA debate, every navigation tradeoff, every content priority. A persona that sits in a deck and never gets referenced again isn't a design tool. It's a document."
+          },
+          {
+            "heading": "The Unifying Insight",
+            "body": "Despite their differences, all five audiences shared a single primary goal: find information efficiently. That shared need became the governing principle for every architectural decision that followed."
+          }
+        ]
+      },
+      {
+        "type": "archGrid",
+        "background": "surface-alt",
+        "eyebrow": "Information Architecture",
+        "heading": "100+ pages.\nThree key decisions.",
+        "body": "A site of this scale can't be designed page by page. We moved to a template-based architecture \u2014 designing systems, not screens \u2014 and made three structural decisions that shaped everything else.",
+        "items": [
+          {
+            "number": "01",
+            "title": "Mega-Navigation",
+            "body": "VSU's content hierarchy was genuinely complex \u2014 six primary navigation trees serving audiences with completely different needs. A conventional nav would bury content or force users into deep drilling.\n\nThe mega-nav surfaced secondary destinations at the top level, reducing cognitive load without hiding complexity.",
+            "impact": "Reduced browsing depth"
+          },
+          {
+            "number": "02",
+            "title": "Global Utility Header",
+            "body": "Analytics told us ~80% of homepage traffic had the same intent: find email, find directory, find portal. That intent was being sent into the main nav to compete with prospective student content.\n\nThe utility header gave returning users a dedicated lane \u2014 and freed the main nav to speak to new audiences.",
+            "impact": "80% of traffic intent, one click"
+          },
+          {
+            "number": "03",
+            "title": "College-Specific Navigation",
+            "body": "Each of VSU's colleges had its own identity, its own content needs, its own audiences. A fully centralized nav would erase that. Full autonomy would fracture the experience.\n\nCollege-specific navigation instances preserved university-wide consistency while giving each college room to breathe.",
+            "impact": "Consistency + autonomy"
+          }
+        ]
+      },
+      {
+        "type": "executionGrid",
+        "background": "surface",
+        "eyebrow": "Execution",
+        "heading": "Built on evidence,\nearned through process.",
+        "columns": [
+          {
+            "title": "Usability Validation",
+            "items": [
+              "Moderated usability testing across all five persona groups",
+              "Users praised IA clarity across every segment",
+              "Navigation tested intuitive without prompting",
+              "Only minor visual refinements required after testing",
+              "Architecture validated before a single page was designed"
+            ]
+          },
+          {
+            "title": "Stakeholder Navigation",
+            "items": [
+              "Early sprint reviews met with silence \u2014 not agreement",
+              "Developed targeted discussion prompts to surface real feedback",
+              "Reframed decisions as tradeoffs, not recommendations",
+              "Built informal rapport alongside formal review cadence",
+              "Stakeholder alignment as critical as design quality"
+            ]
+          },
+          {
+            "title": "508 Accessibility",
+            "items": [
+              "Third 508 engagement \u2014 first in higher education",
+              "Healthcare and financial services experiences applied to a new context",
+              "Campus atmosphere and emotional resonance retained within compliance",
+              "Accessibility treated as a design lens, not a compliance checklist",
+              "Decisions serving compliance almost always served clarity too"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "background": "default",
+        "eyebrow": "Outcomes",
+        "heading": "A dated maze, transformed.",
+        "stats": [
+          {
+            "value": "5",
+            "label": "Audience groups\nserved and validated"
+          },
+          {
+            "value": "100+",
+            "label": "Pages architected\nvia template system"
+          },
+          {
+            "value": "508",
+            "label": "Compliant \u2014 first\nhigher ed engagement"
+          }
+        ],
+        "list": [
+          "Navigation tested intuitive across all persona groups",
+          "508 accessibility compliance achieved in higher ed for the first time",
+          "Template-based IA reduced design and dev overhead at scale",
+          "Stakeholder alignment achieved through process, not persuasion",
+          "Mega-nav reduced browsing depth for complex content hierarchy",
+          "Campus atmosphere preserved within accessibility constraints"
+        ]
+      }
+    ],
+    "reflection": {
+      "quote": "Accessibility isn't a compliance checkbox. It's a design lens. And every time we made a decision that served compliance, it almost always served clarity too.",
+      "followUp": "This project also reinforced something about how I think about scale: strategic template systems outperform page-by-page design every time. And proactive stakeholder engagement isn't a soft skill \u2014 it's as critical as the design work itself."
+    },
+    "nextProject": {
+      "slug": "apex-tools",
+      "title": "Apex Tools",
+      "blurb": null
+    }
+  },
+  {
+    "slug": "apex-tools",
+    "order": 4,
+    "visible": true,
+    "reversed": true,
+    "card": {
+      "role": "ACD, Product Design",
+      "brand": "Apex Tools",
+      "title": "Revitalizing Three Professional Tool Brands at Once",
+      "description": "Led the simultaneous digital relaunch of three professional tool brands \u2014 Gearwrench, Crescent, and SATA \u2014 with distinct brand identities built on shared infrastructure.",
+      "metrics": [],
+      "image": "/images/home/apex-card.jpg",
+      "imageAlt": "Apex Tools brand sites"
+    },
+    "hero": {
+      "title": "APEX Tools",
+      "subtitle": "Three brands. One platform. No compromises.",
+      "meta": [
+        {
+          "label": "Brand",
+          "value": "Apex Tool Group"
+        },
+        {
+          "label": "Role",
+          "value": "ACD, Product Design"
+        },
+        {
+          "label": "Brands",
+          "value": "Gearwrench, Crescent, SATA"
+        },
+        {
+          "label": "Scope",
+          "value": "Multi-Brand E-Commerce"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "projectOverview",
+        "background": "default",
+        "eyebrow": "The Project",
+        "paragraphs": [
+          "ACD on the simultaneous digital relaunch of three professional tool brands under the Apex Tool Group umbrella. Three distinct audiences \u2014 mechanics (Gearwrench), contractors and DIY (Crescent), industrial and body shop (SATA) \u2014 each with their own visual identity, their own content strategy, and their own expectations. One shared platform underneath all of it.",
+          "The challenge wasn't building three websites. It was building one system flexible enough to serve three entirely different product stories without collapsing into a generic middle ground."
+        ],
+        "image": "/images/apex/overview.png",
+        "imageAlt": "Apex Tools multi-brand platform overview"
+      },
+      {
+        "type": "pocketsGrid",
+        "background": "surface",
+        "eyebrow": "The Approach",
+        "heading": "Three layers. Infinite edge cases.",
+        "body": "The only way to make three-brand work viable was to be explicit about what lived at which layer. Every decision had to land somewhere. If the decision was wrong about where it belonged, it either broke something or slowed everything down.",
+        "pockets": [
+          {
+            "number": "01",
+            "title": "Shared Infrastructure",
+            "problem": null,
+            "solution": "Common platform, checkout, account management, backend integrations. Users never see it. Every brand benefits from it. Non-negotiable.",
+            "impact": "The engine underneath"
+          },
+          {
+            "number": "02",
+            "title": "Unified UX Patterns",
+            "problem": null,
+            "solution": "Navigation, product detail page layouts, filtering systems, mobile behaviors. Consistent enough to learn once. Flexible enough to feel brand-appropriate.",
+            "impact": "Learn once, use anywhere"
+          },
+          {
+            "number": "03",
+            "title": "Brand-Specific Expression",
+            "problem": null,
+            "solution": "Visual identity, photography direction, copy tone, homepage storytelling. This is where Gearwrench looks nothing like SATA. Intentionally.",
+            "impact": "Where differentiation lives"
+          }
+        ]
+      },
+      {
+        "type": "brandsGrid",
+        "background": "default",
+        "eyebrow": "The Brands",
+        "heading": "One platform. Three identities.",
+        "body": "Each brand served a different professional audience. Design decisions that worked for one didn't automatically work for the others \u2014 and that was the point. The system had to hold without flattening.",
+        "brands": [
+          {
+            "number": "01",
+            "name": "Gearwrench",
+            "audience": "Professional Mechanics",
+            "description": "Socket sets, wrenches, and drive tools for the shop floor. Dense product catalog. Users who know exactly what they need and need to find it fast."
+          },
+          {
+            "number": "02",
+            "name": "Crescent",
+            "audience": "Contractors & DIY",
+            "description": "Hand tools spanning professional trades and weekend projects. Broader audience range with more educational content needs and a warmer, approachable tone."
+          },
+          {
+            "number": "03",
+            "name": "SATA Tools",
+            "audience": "Industrial & Body Shop",
+            "description": "Spray guns and finishing equipment for body shop professionals. Highly specialized. Small, expert audience that needs depth over breadth."
+          }
+        ]
+      },
+      {
+        "type": "executionGrid",
+        "background": "surface",
+        "eyebrow": "The Work",
+        "heading": "E-commerce complexity at three scales.",
+        "bodyTexts": [
+          "Each brand sat at the intersection of direct-to-consumer, retail partners, and industrial distributors \u2014 all within one coherent experience. Deep product catalogs demanded filtering by tool type, drive size, material, and application. And three brand teams, each with strong existing identities and legitimate opinions, meant the governance model mattered as much as the design."
+        ],
+        "columns": [
+          {
+            "title": "Channel Complexity",
+            "items": [
+              "Direct-to-consumer, retail, and industrial distribution in one system",
+              "Channel-specific pricing and availability logic",
+              "Product data that had to work across wildly different catalog depths",
+              "Buy flows that respected how each audience actually purchases"
+            ]
+          },
+          {
+            "title": "Catalog Architecture",
+            "items": [
+              "Filtering systems across tool type, drive size, material, application",
+              "Product relationships (what fits what) as a navigation challenge",
+              "Technical spec depth for expert users without overwhelming new ones",
+              "Mobile-first product discovery for in-aisle and shop-floor use"
+            ]
+          },
+          {
+            "title": "Brand Governance",
+            "items": [
+              "Three brand teams, three visual identities, three sets of opinions",
+              "Brand teams own visual and content decisions",
+              "Platform decisions centralized and non-negotiable",
+              "Documented decision rights reduced conflict and accelerated delivery"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "bigStat",
+        "background": "surface-alt",
+        "eyebrow": "The Impact",
+        "heading": "Three brands. One delivery.",
+        "number": "3",
+        "numberStrong": "professional tool brands",
+        "numberSub": "one shared infrastructure",
+        "bodyTexts": [
+          "Three simultaneous brand launches on a shared platform. The number sounds straightforward. The execution required constant navigation between brand-level advocacy and platform-level discipline \u2014 and knowing exactly which instinct to trust in each moment."
+        ],
+        "pullquote": "The right boundary between brand differentiation and platform standardization isn't a design decision. It's a leadership decision.",
+        "details": []
+      },
+      {
+        "type": "outcomes",
+        "background": "default",
+        "eyebrow": "Outcomes",
+        "heading": "Platform thinking pays off.",
+        "stats": [
+          {
+            "value": "3",
+            "label": "Brands launched\non one platform"
+          },
+          {
+            "value": "\u2191",
+            "label": "Conversion rates\nacross all three sites"
+          },
+          {
+            "value": "\u2193",
+            "label": "Time-to-product\nacross all brands"
+          }
+        ],
+        "list": [
+          "Time-to-product decreased across all three sites",
+          "Conversion rates improved post-launch",
+          "Post-launch research showed users perceived each brand's distinct value more clearly",
+          "Shared infrastructure reduced ongoing maintenance burden significantly",
+          "Governance model became the template for future brand acquisitions",
+          "Design system portable enough to onboard new brands without a rebuild"
+        ]
+      }
+    ],
+    "reflection": {
+      "quote": "Multi-brand work demands comfort with tension. Brand teams will always push for differentiation; platform teams will always push for standardization. Neither instinct is wrong \u2014 the skill is finding the right boundary between them.",
+      "followUp": "On APEX, that boundary lived at the UX layer. Visual identity was entirely brand-owned. Interaction patterns were platform-owned. The moment we made that explicit \u2014 and stopped relitigating it in every design review \u2014 everything moved faster."
+    },
+    "nextProject": {
+      "slug": "sherwin-williams",
+      "title": "Sherwin-Williams",
+      "blurb": "Five brands. One system. Infinite stakeholders."
+    }
+  },
+  {
+    "slug": "sherwin-williams",
+    "order": 5,
+    "visible": true,
+    "reversed": false,
+    "card": {
+      "role": "ACD, Product Design",
+      "brand": "Sherwin-Williams",
+      "title": "A Multi-Brand Digital Transformation",
+      "description": "Five consumer brand relaunches under one engagement \u2014 Krylon, Cabot, Purdy, Thompson's Water Seal, and Minwax \u2014 each distinct in voice, unified in architecture.",
+      "metrics": [],
+      "image": "/images/home/sherwin-card.png",
+      "imageAlt": "Sherwin-Williams brand sites"
+    },
+    "hero": {
+      "title": "Sherwin-Williams",
+      "subtitle": "Five brands. One system. Infinite stakeholders.",
+      "meta": [
+        {
+          "label": "Brand",
+          "value": "Sherwin-Williams"
+        },
+        {
+          "label": "Role",
+          "value": "ACD, Product Design"
+        },
+        {
+          "label": "Brands",
+          "value": "5 Consumer Brands"
+        },
+        {
+          "label": "Scope",
+          "value": "Multi-Brand Digital Transformation"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "type": "projectOverview",
+        "background": "default",
+        "eyebrow": "The Project",
+        "paragraphs": [
+          "The simultaneous digital relaunch of five consumer brand websites: Krylon, Cabot, Purdy, Thompson's Water Seal, and Minwax. Each brand had its own audience, its own visual identity, its own content strategy, and its own team with strong opinions about all three. One ACD responsible for the coherence of all of it.",
+          "Product discovery was broken across all five brands. Rich how-to content existed but was disconnected from the purchase journey. Mobile experiences lagged despite significant in-store mobile research behavior. And the digital presence, as it stood, was flattening the very brand differentiation Sherwin-Williams had spent decades building."
+        ],
+        "image": "/images/sherwin/overview.png",
+        "imageAlt": "Sherwin-Williams multi-brand digital platform"
+      },
+      {
+        "type": "swBrandsGrid",
+        "background": "surface",
+        "eyebrow": "Five Brands",
+        "heading": "Same system. Five different stories.",
+        "body": "Each brand served a distinct audience with distinct content needs. The design system had to be consistent enough to maintain at scale and flexible enough that a Minwax user and a Krylon user never felt like they were on the same website.",
+        "brands": [
+          {
+            "number": "01",
+            "name": "Krylon",
+            "audience": "DIY & Crafters",
+            "description": "Spray paint for makers, crafters, and weekend projects. Bold, energetic tone. Users who want inspiration as much as product information."
+          },
+          {
+            "number": "02",
+            "name": "Cabot",
+            "audience": "Woodcare Enthusiasts",
+            "description": "Stains and finishes for decks, fences, and wood surfaces. Craftsman aesthetic. A mix of serious DIY and professional applicators."
+          },
+          {
+            "number": "03",
+            "name": "Purdy",
+            "audience": "Professional Painters",
+            "description": "Premium brushes and application tools. Heavy on bulk ordering and professional specifications. Users who already know exactly what they want."
+          },
+          {
+            "number": "04",
+            "name": "Thompson's Water Seal",
+            "audience": "Homeowners",
+            "description": "Waterproofing sealants with strong seasonal and regional demand. Simple product line with high educational content needs \u2014 the 'why' matters as much as the 'what.'"
+          },
+          {
+            "number": "05",
+            "name": "Minwax",
+            "audience": "Wood Finishing",
+            "description": "Interior wood stains and finishes. Guided product selection by wood type and desired finish. Users who need help deciding, not just browsing."
+          }
+        ]
+      },
+      {
+        "type": "briefCallout",
+        "background": "surface-alt",
+        "eyebrow": null,
+        "heading": null,
+        "quote": "Infrastructure is a leadership decision.",
+        "source": "Reflection on the engagement",
+        "bodyTexts": [
+          "It would have been faster in the short term to build five independent sites. Each brand team gets exactly what they want. No negotiation. No governance overhead. Ship and move on.",
+          "But that approach leaves Sherwin-Williams with five separate codebases, five separate design systems, five separate maintenance burdens \u2014 and no ability to onboard a sixth brand without rebuilding everything from scratch. The system approach required more upfront investment and more coordination overhead. It also positioned the business for sustainable growth rather than accumulating technical debt with every new brand or feature request."
+        ]
+      },
+      {
+        "type": "findingsGrid",
+        "background": "default",
+        "eyebrow": "The Problem",
+        "heading": "Four things broken across five brands.",
+        "body": "Before touching design, we needed to understand what was actually failing. User research across all five brands surfaced a consistent set of problems \u2014 different in severity by brand, identical in kind.",
+        "findings": [
+          {
+            "title": "01 \u2014 Product Discovery",
+            "items": [
+              "Search and browse broken across all five brands",
+              "Users couldn't filter by project type, surface, or finish",
+              "The \"right product for my project\" journey didn't exist",
+              "Guided selection tools present on zero of five sites at project start"
+            ]
+          },
+          {
+            "title": "02 \u2014 Content Disconnection",
+            "items": [
+              "Rich how-to content existed but lived separately from products",
+              "No bridge between inspiration/education and purchase",
+              "Minwax and Cabot had deep project guides that went nowhere",
+              "Thompson's seasonal content wasn't tied to purchase timing"
+            ]
+          },
+          {
+            "title": "03 \u2014 Mobile Experience",
+            "items": [
+              "In-store mobile research behavior was significant and unserved",
+              "Users consulting product pages in hardware aisles got a desktop experience",
+              "Mobile usability lagged significantly despite that use case being documented",
+              "No in-store mode, no quick comparison, no spec at a glance"
+            ]
+          },
+          {
+            "title": "04 \u2014 Brand Flattening",
+            "items": [
+              "Despite distinct brand identities, sites felt like one generic template",
+              "Krylon and Purdy had nearly identical homepage structures",
+              "Visual differentiation that existed offline wasn't translating digitally",
+              "Brand teams were frustrated \u2014 the investment in brand wasn't showing up online"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "bigStat",
+        "background": "surface-alt",
+        "eyebrow": "The Scale",
+        "heading": "Five brands. One delivery.",
+        "number": "5",
+        "numberStrong": "consumer brands",
+        "numberSub": "one shared design system",
+        "bodyTexts": [
+          "Five simultaneous brand launches. Different visual identities, different content strategies, different audiences. One underlying system flexible enough to serve them all distinctly \u2014 and scalable enough that a sixth brand could plug in without a rebuild."
+        ],
+        "pullquote": "Standardized: interaction patterns, navigation, product detail templates, accessibility, performance. Customized: typography, color, imagery, tone, feature prioritization. Those two lists never got mixed up.",
+        "details": []
+      },
+      {
+        "type": "executionGrid",
+        "background": "surface",
+        "eyebrow": "The Process",
+        "heading": "Coordination at scale.",
+        "bodyTexts": [
+          "Five brand teams. Five sets of priorities. One cross-functional process that had to hold. The design process was as much about tradeoff framing as it was about design output."
+        ],
+        "columns": [
+          {
+            "title": "Weekly Design Reviews",
+            "items": [
+              "Cross-brand design reviews to maintain system coherence",
+              "Brand-specific reviews to protect identity decisions",
+              "Tradeoff framing: every \"no\" came with an alternative",
+              "Design system governance as a living document, not a one-time artifact"
+            ]
+          },
+          {
+            "title": "Stakeholder Management",
+            "items": [
+              "Bi-weekly syncs with five brand stakeholder groups",
+              "Sprint-based delivery with visible progress for each team",
+              "Competing priorities surfaced early, resolved before they became blockers",
+              "Executive-level communication for system-level decisions"
+            ]
+          },
+          {
+            "title": "Technical Scalability",
+            "items": [
+              "Shared component library maintained by a centralized team",
+              "Brand customization through tokens, not one-off overrides",
+              "Performance budgets applied system-wide, not brand-by-brand",
+              "Future acquisition onboarding built into the architecture from day one"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "background": "default",
+        "eyebrow": "Outcomes",
+        "heading": "Five brands. Better.",
+        "stats": [
+          {
+            "value": "5",
+            "label": "Brand sites launched\nsimultaneously"
+          },
+          {
+            "value": "\u2191",
+            "label": "Product discovery\nacross all brands"
+          },
+          {
+            "value": "\u2191",
+            "label": "Mobile usability\nacross all brands"
+          }
+        ],
+        "list": [
+          "Guided product selection tools live on Minwax and Cabot at launch",
+          "How-to content woven into purchase journey on Thompson's and Krylon",
+          "Mobile usability significantly improved, in-store use case specifically designed for",
+          "Shared system established as the foundation for future brand acquisitions",
+          "Each brand team felt \u2014 and could demonstrate \u2014 distinct brand expression online",
+          "Post-launch research confirmed users perceived each brand's unique value more clearly"
+        ]
+      }
+    ],
+    "reflection": {
+      "quote": "What made this project distinct from single-brand work was the constant negotiation between system-level thinking and brand-level advocacy. Both are legitimate perspectives. Neither can win completely.",
+      "followUp": "The work that matters most on a project like this rarely shows up in a portfolio screenshot. It shows up in the governance model. In the decision rights document. In the stakeholder relationship that made five simultaneous launches possible without five simultaneous fires."
+    },
+    "nextProject": null
+  }
+]
