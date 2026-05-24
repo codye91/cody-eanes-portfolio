@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { getAllProjectsAdmin } from '@/lib/content'
 import AdminSidebar from '@/components/AdminSidebar'
 
 export const metadata: Metadata = {
@@ -7,9 +8,14 @@ export const metadata: Metadata = {
 }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  const projects = getAllProjectsAdmin().map(p => ({
+    slug: p.slug,
+    label: p.card.brand,
+  }))
+
   return (
     <div className="admin-shell">
-      <AdminSidebar />
+      <AdminSidebar projects={projects} />
       <main className="admin-main">{children}</main>
     </div>
   )
