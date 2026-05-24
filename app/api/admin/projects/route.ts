@@ -31,6 +31,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'A project with that slug already exists.' }, { status: 409 })
   }
 
-  saveProject(project)
-  return NextResponse.json({ ok: true }, { status: 201 })
+  try {
+    await saveProject(project)
+    return NextResponse.json({ ok: true }, { status: 201 })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to save project.'
+    return NextResponse.json({ error: message }, { status: 500 })
+  }
 }

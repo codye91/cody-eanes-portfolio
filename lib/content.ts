@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { writeGitHubFile } from './github'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content')
 
@@ -285,14 +286,25 @@ export function getSiteContent(): SiteContent {
   return readJSON<SiteContent>('site.json')
 }
 
-// ─── Writers (local filesystem — dev only; see CMS_README for production) ───
+// ─── Writers ─────────────────────────────────────────────────────────────────
+// When GITHUB_TOKEN is set (production + local with .env.local), changes are
+// committed to the repo via the GitHub API and Vercel auto-rebuilds.
+// Without GITHUB_TOKEN, falls back to local filesystem (plain dev mode).
 
-export function saveProjects(projects: Project[]): void {
-  const filePath = path.join(CONTENT_DIR, 'projects.json')
-  fs.writeFileSync(filePath, JSON.stringify(projects, null, 2), 'utf-8')
+async function writeContent(filename: string, data: unknown, message: string): Promise<void> {
+  const json = JSON.stringify(data, null, 2)
+  if (process.env.GITHUB_TOKEN) {
+    await writeGitHubFile(`content/${filename}`, json, message)
+  } else {
+    fs.writeFileSync(path.join(CONTENT_DIR, filename), json, 'utf-8')
+  }
 }
 
-export function saveProject(project: Project): void {
+export async function saveProjects(projects: Project[]): Promise<void> {
+  await writeContent('projects.json', projects, 'cms: update projects.json')
+}
+
+export async function saveProject(project: Project): Promise<void> {
   const projects = readJSON<Project[]>('projects.json')
   const idx = projects.findIndex(p => p.slug === project.slug)
   if (idx >= 0) {
@@ -300,15 +312,14 @@ export function saveProject(project: Project): void {
   } else {
     projects.push(project)
   }
-  saveProjects(projects)
+  await saveProjects(projects)
 }
 
-export function deleteProject(slug: string): void {
+export async function deleteProject(slug: string): Promise<void> {
   const projects = readJSON<Project[]>('projects.json')
-  saveProjects(projects.filter(p => p.slug !== slug))
+  await saveProjects(projects.filter(p => p.slug !== slug))
 }
 
-export function saveSiteContent(content: SiteContent): void {
-  const filePath = path.join(CONTENT_DIR, 'site.json')
-  fs.writeFileSync(filePath, JSON.stringify(content, null, 2), 'utf-8')
+export async function saveSiteContent(content: SiteContent): Promise<void> {
+  await writeContent('site.json', content, 'cms: update site.json')
 }
