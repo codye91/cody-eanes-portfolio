@@ -71,6 +71,7 @@ export interface JourneyStagesSection extends SectionBase {
 export interface StatDetail {
   heading: string
   body: string
+  toolTags?: string[]
 }
 
 export interface BigStatSection extends SectionBase {

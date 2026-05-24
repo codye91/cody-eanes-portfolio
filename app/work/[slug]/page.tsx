@@ -194,44 +194,51 @@ function BigStat({ s }: { s: BigStatSection }) {
             </h2>
           </FadeUp>
         )}
-        <div className="big-stat-grid">
-          <FadeUp>
-            <div className="big-stat-number-block">
-              <span className="big-stat-num">{s.number}</span>
-              <div>
-                <p className="big-stat-strong">
-                  {s.numberStrong.split('\n').map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      {i < s.numberStrong.split('\n').length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-                <p className="big-stat-sub">{s.numberSub}</p>
-              </div>
+        <FadeUp>
+          <div className="big-stat-number-block">
+            <span className="big-stat-num">{s.number}</span>
+            <div>
+              <p className="big-stat-strong">
+                {s.numberStrong.split('\n').map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < s.numberStrong.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+              <p className="big-stat-sub">{s.numberSub}</p>
             </div>
+          </div>
+        </FadeUp>
+        {s.bodyTexts.map((p, i) => (
+          <FadeUp key={i}>
+            <p className="section-body">{p}</p>
           </FadeUp>
-          <div className="big-stat-content">
-            {s.bodyTexts.map((p, i) => (
-              <FadeUp key={i}>
-                <p className="section-body">{p}</p>
-              </FadeUp>
-            ))}
-            {s.pullquote && (
-              <FadeUp>
-                <blockquote className="case-pullquote">{s.pullquote}</blockquote>
-              </FadeUp>
-            )}
+        ))}
+        {s.pullquote && (
+          <FadeUp>
+            <blockquote className="case-pullquote">{s.pullquote}</blockquote>
+          </FadeUp>
+        )}
+        {s.details.length > 0 && (
+          <div className="stat-details-grid">
             {s.details.map((d, i) => (
               <FadeUp key={i}>
                 <div className="stat-detail">
-                  <h4 className="stat-detail-heading">{d.heading}</h4>
+                  <h3 className="stat-detail-heading">{d.heading}</h3>
                   <p className="stat-detail-body">{d.body}</p>
+                  {d.toolTags && d.toolTags.length > 0 && (
+                    <div className="tool-tags">
+                      {d.toolTags.map((tag, ti) => (
+                        <span key={ti} className="tool-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </FadeUp>
             ))}
           </div>
-        </div>
+        )}
       </div>
     </section>
   )
