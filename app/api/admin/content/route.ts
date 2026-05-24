@@ -21,6 +21,11 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid JSON.' }, { status: 400 })
   }
 
-  saveSiteContent(content)
-  return NextResponse.json({ ok: true })
+  try {
+    await saveSiteContent(content)
+    return NextResponse.json({ ok: true })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to save site content.'
+    return NextResponse.json({ error: message }, { status: 500 })
+  }
 }

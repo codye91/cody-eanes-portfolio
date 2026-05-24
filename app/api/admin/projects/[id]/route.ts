@@ -34,7 +34,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
   // Preserve the original slug — don't allow slug changes via PUT
   updated.slug = id
   try {
-    saveProject(updated)
+    await saveProject(updated)
     return NextResponse.json({ ok: true })
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to write content file.'
@@ -51,7 +51,7 @@ export async function DELETE(_req: NextRequest, { params }: Params) {
   if (!existing) return NextResponse.json({ error: 'Not found.' }, { status: 404 })
 
   try {
-    deleteProject(id)
+    await deleteProject(id)
     return NextResponse.json({ ok: true })
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to delete project.'
