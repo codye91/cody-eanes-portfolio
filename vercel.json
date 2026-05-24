@@ -1,4 +1,5 @@
 {
+  "framework": "nextjs",
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/dollar-shave-club", "destination": "/", "permanent": true },
