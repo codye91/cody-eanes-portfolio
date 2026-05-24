@@ -33,7 +33,7 @@ const phases = [
           'Extract key themes from user feedback at scale',
           'Generate initial content inventories and audit reports',
         ],
-        note: 'In practice: On a recent e-commerce redesign, I fed an entire website into ChatGPT to identify the top 10 friction points in the primary user flow — work that would've taken weeks happened in an afternoon.',
+        note: "In practice: On a recent e-commerce redesign, I fed an entire website into ChatGPT to identify the top 10 friction points in the primary user flow — work that would've taken weeks happened in an afternoon.",
         noteBold: 'In practice:',
       },
     ],
