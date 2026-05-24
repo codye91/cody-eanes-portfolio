@@ -26,7 +26,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className={open ? 'nav-open' : ''}>
+    <nav className={`site-nav${open ? ' nav-open' : ''}`}>
       <div className="nav-inner">
         <Link href="/" className="nav-wordmark" onClick={close}>
           Cody Eanes
