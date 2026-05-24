@@ -46,6 +46,17 @@
     },
     "sections": [
       {
+        "type": "projectOverview",
+        "background": "default",
+        "eyebrow": "The Project",
+        "paragraphs": [
+          "I led the ground-up rebuild of Wegovy.com, directing UX strategy, content architecture, and client relationships across a five-month engagement. Working alongside a UI Director, content strategists, and copywriters, I owned the experience vision from kickoff through launch — facilitating workshops, leading wireframe development, and serving as the primary point of contact for stakeholder communication and developer support during the AEM build.",
+          "This project also marked a milestone in how I leverage AI as a design tool, using ChatGPT, Claude, and Figma Make to architect a wayfinding quiz with <strong>45 unique outcome combinations</strong>."
+        ],
+        "image": "/images/wegovy/overview.png",
+        "imageAlt": "Wegovy.com redesign — MacBook mockup"
+      },
+      {
         "type": "problemCards",
         "background": "surface",
         "eyebrow": "The Problem",
@@ -62,17 +73,6 @@
             "body": "Wegovy is a lifestyle product. The site read like a pharmaceutical package insert. The architecture, tone, and visual design all prioritized compliance over connection — leaving real patients without a clear path forward."
           }
         ]
-      },
-      {
-        "type": "projectOverview",
-        "background": "default",
-        "eyebrow": "The Project",
-        "paragraphs": [
-          "I led the ground-up rebuild of Wegovy.com, directing UX strategy, content architecture, and client relationships across a five-month engagement. Working alongside a UI Director, content strategists, and copywriters, I owned the experience vision from kickoff through launch — facilitating workshops, leading wireframe development, and serving as the primary point of contact for stakeholder communication and developer support during the AEM build.",
-          "This project also marked a milestone in how I leverage AI as a design tool, using ChatGPT, Claude, and Figma Make to architect a wayfinding quiz with <strong>45 unique outcome combinations</strong>."
-        ],
-        "image": "/images/wegovy/overview.png",
-        "imageAlt": "Wegovy.com redesign — MacBook mockup"
       },
       {
         "type": "journeyStages",
