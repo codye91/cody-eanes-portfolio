@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import type { Project } from '@/lib/content'
+import SectionBuilder from '@/components/SectionBuilder'
 
 export default function ProjectForm({
   project: initial,
@@ -276,26 +277,15 @@ export default function ProjectForm({
         </div>
       </section>
 
-      {/* ── Sections (raw JSON) ───────────────────────── */}
+      {/* ── Sections ─────────────────────────────────── */}
       <section className="admin-form-section">
-        <h2 className="admin-form-section-title">Sections (JSON)</h2>
-        <p className="admin-field-hint">
-          Advanced: edit the typed section array directly. Validate JSON before saving.
+        <h2 className="admin-form-section-title">Sections</h2>
+        <p className="admin-field-hint" style={{ marginBottom: '16px' }}>
+          Add, reorder, and edit case study sections. Each section maps to a visual block on the public page.
         </p>
-        <textarea
-          className="admin-textarea admin-json-editor"
-          rows={20}
-          value={JSON.stringify(project.sections, null, 2)}
-          onChange={e => {
-            try {
-              const parsed = JSON.parse(e.target.value)
-              set('sections', parsed)
-              setError('')
-            } catch {
-              setError('Invalid JSON in sections editor.')
-            }
-          }}
-          spellCheck={false}
+        <SectionBuilder
+          sections={project.sections}
+          onChange={sections => set('sections', sections)}
         />
       </section>
 
