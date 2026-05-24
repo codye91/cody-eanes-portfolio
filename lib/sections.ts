@@ -74,7 +74,7 @@ export function getSectionOptions(): { type: string; label: string }[] {
  * When a section is added in the admin, these defaults pre-populate
  * the section's data so it renders something meaningful immediately.
  */
-export const SECTION_DEFAULTS: Record<string, Omit<ProjectSection, 'type'>> = {
+export const SECTION_DEFAULTS: Record<string, Record<string, unknown>> = {
   projectOverview: {
     background: 'default',
     eyebrow: 'Overview',
