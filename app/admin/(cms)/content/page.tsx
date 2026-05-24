@@ -10,8 +10,8 @@ export default function AdminContentPage() {
     <div className="admin-page">
       <div className="admin-page-header">
         <div>
-          <h1 className="admin-page-title">Content</h1>
-          <p className="admin-page-sub">Hero, About, Contact</p>
+          <h1 className="admin-page-title">Home</h1>
+          <p className="admin-page-sub">Hero, ticker, work section, footer</p>
         </div>
       </div>
       <ContentForm initialContent={content} />

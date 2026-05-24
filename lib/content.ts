@@ -254,6 +254,7 @@ export interface SiteContent {
   contact: { email: string; resumeUrl: string }
   footer: Record<string, unknown>
   footerCaseStudy: Record<string, unknown>
+  myProcess: Record<string, unknown>
 }
 
 // ─── Readers ─────────────────────────────────────────────────────────────────

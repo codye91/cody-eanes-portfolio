@@ -3,24 +3,34 @@
 import { useState } from 'react'
 import type { SiteContent } from '@/lib/content'
 
+type FooterData = {
+  eyebrow: string
+  heading: string
+  description: string
+  ctaLabel: string
+  copyright: string
+  secondaryLink: { label: string; href: string }
+}
+
+type FooterCaseStudyData = {
+  eyebrow: string
+  heading: string
+  description: string
+  ctaLabel: string
+}
+
 export default function ContentForm({ initialContent }: { initialContent: SiteContent }) {
   const [content, setContent] = useState(initialContent)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
 
-  function setHero<K extends keyof SiteContent['hero']>(
-    key: K,
-    value: SiteContent['hero'][K]
-  ) {
+  function setHero<K extends keyof SiteContent['hero']>(key: K, value: SiteContent['hero'][K]) {
     setContent(prev => ({ ...prev, hero: { ...prev.hero, [key]: value } }))
   }
 
-  function setContact<K extends keyof SiteContent['contact']>(
-    key: K,
-    value: string
-  ) {
-    setContent(prev => ({ ...prev, contact: { ...prev.contact, [key]: value } }))
+  function setWorkSection<K extends keyof SiteContent['workSection']>(key: K, value: string) {
+    setContent(prev => ({ ...prev, workSection: { ...prev.workSection, [key]: value } }))
   }
 
   function setTestimonial(idx: number, value: string) {
@@ -31,15 +41,35 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
     })
   }
 
+  function setFooter<K extends keyof FooterData>(key: K, value: FooterData[K]) {
+    setContent(prev => ({ ...prev, footer: { ...(prev.footer as FooterData), [key]: value } }))
+  }
+
+  function setFooterCaseStudy<K extends keyof FooterCaseStudyData>(key: K, value: string) {
+    setContent(prev => ({
+      ...prev,
+      footerCaseStudy: { ...(prev.footerCaseStudy as FooterCaseStudyData), [key]: value },
+    }))
+  }
+
   async function handleSave() {
     setSaving(true)
     setError('')
     setSuccess('')
     try {
+      const latest = await fetch('/api/admin/content').then(r => r.json())
+      const updated = {
+        ...latest,
+        hero: content.hero,
+        ticker: content.ticker,
+        workSection: content.workSection,
+        footer: content.footer,
+        footerCaseStudy: content.footerCaseStudy,
+      }
       const res = await fetch('/api/admin/content', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(content),
+        body: JSON.stringify(updated),
       })
       if (res.ok) {
         setSuccess('Saved successfully.')
@@ -54,14 +84,17 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
     }
   }
 
+  const footer = content.footer as FooterData
+  const footerCS = content.footerCaseStudy as FooterCaseStudyData
+
   return (
     <div className="admin-form">
       {error && <p className="admin-form-error">{error}</p>}
       {success && <p className="admin-form-success">{success}</p>}
 
-      {/* ── Hero ─────────────────────────────────────── */}
+      {/* ── Hero ──────────────────────────────────────── */}
       <section className="admin-form-section">
-        <h2 className="admin-form-section-title">Homepage Hero</h2>
+        <h2 className="admin-form-section-title">Hero</h2>
         <div className="admin-field">
           <label className="admin-label">Eyebrow</label>
           <input
@@ -94,9 +127,7 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
             <input
               className="admin-input"
               value={content.hero.primaryCta.label}
-              onChange={e =>
-                setHero('primaryCta', { ...content.hero.primaryCta, label: e.target.value })
-              }
+              onChange={e => setHero('primaryCta', { ...content.hero.primaryCta, label: e.target.value })}
             />
           </div>
           <div className="admin-field">
@@ -104,9 +135,7 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
             <input
               className="admin-input"
               value={content.hero.primaryCta.href}
-              onChange={e =>
-                setHero('primaryCta', { ...content.hero.primaryCta, href: e.target.value })
-              }
+              onChange={e => setHero('primaryCta', { ...content.hero.primaryCta, href: e.target.value })}
             />
           </div>
         </div>
@@ -116,12 +145,7 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
             <input
               className="admin-input"
               value={content.hero.secondaryCta.label}
-              onChange={e =>
-                setHero('secondaryCta', {
-                  ...content.hero.secondaryCta,
-                  label: e.target.value,
-                })
-              }
+              onChange={e => setHero('secondaryCta', { ...content.hero.secondaryCta, label: e.target.value })}
             />
           </div>
           <div className="admin-field">
@@ -129,18 +153,13 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
             <input
               className="admin-input"
               value={content.hero.secondaryCta.href}
-              onChange={e =>
-                setHero('secondaryCta', {
-                  ...content.hero.secondaryCta,
-                  href: e.target.value,
-                })
-              }
+              onChange={e => setHero('secondaryCta', { ...content.hero.secondaryCta, href: e.target.value })}
             />
           </div>
         </div>
       </section>
 
-      {/* ── Ticker ───────────────────────────────────── */}
+      {/* ── Ticker ────────────────────────────────────── */}
       <section className="admin-form-section">
         <h2 className="admin-form-section-title">Ticker Testimonials</h2>
         {content.ticker.testimonials.map((t, i) => (
@@ -155,55 +174,150 @@ export default function ContentForm({ initialContent }: { initialContent: SiteCo
         ))}
       </section>
 
-      {/* ── About (raw JSON) ──────────────────────────── */}
+      {/* ── Work Section ──────────────────────────────── */}
       <section className="admin-form-section">
-        <h2 className="admin-form-section-title">About Page Content (JSON)</h2>
-        <p className="admin-field-hint">
-          Edit all about page content including bio, facts, human stuff, and how I work sections.
-        </p>
-        <textarea
-          className="admin-textarea admin-json-editor"
-          rows={30}
-          value={JSON.stringify(content.about, null, 2)}
-          onChange={e => {
-            try {
-              const parsed = JSON.parse(e.target.value)
-              setContent(prev => ({ ...prev, about: parsed }))
-              setError('')
-            } catch {
-              setError('Invalid JSON in About editor.')
-            }
-          }}
-          spellCheck={false}
-        />
+        <h2 className="admin-form-section-title">Work Section</h2>
+        <div className="admin-field">
+          <label className="admin-label">Eyebrow</label>
+          <input
+            className="admin-input"
+            value={content.workSection.eyebrow}
+            onChange={e => setWorkSection('eyebrow', e.target.value)}
+          />
+        </div>
+        <div className="admin-field">
+          <label className="admin-label">Heading</label>
+          <input
+            className="admin-input"
+            value={content.workSection.heading}
+            onChange={e => setWorkSection('heading', e.target.value)}
+          />
+        </div>
+        <div className="admin-field">
+          <label className="admin-label">Description</label>
+          <p className="admin-field-hint">Supports inline HTML for links.</p>
+          <textarea
+            className="admin-textarea"
+            rows={3}
+            value={content.workSection.description}
+            onChange={e => setWorkSection('description', e.target.value)}
+          />
+        </div>
       </section>
 
-      {/* ── Contact ──────────────────────────────────── */}
+      {/* ── Footer (homepage) ─────────────────────────── */}
       <section className="admin-form-section">
-        <h2 className="admin-form-section-title">Contact</h2>
+        <h2 className="admin-form-section-title">Footer — Homepage</h2>
         <div className="admin-form-row">
           <div className="admin-field">
-            <label className="admin-label">Email</label>
+            <label className="admin-label">Eyebrow</label>
             <input
               className="admin-input"
-              type="email"
-              value={content.contact.email}
-              onChange={e => setContact('email', e.target.value)}
+              value={footer.eyebrow ?? ''}
+              onChange={e => setFooter('eyebrow', e.target.value)}
             />
           </div>
           <div className="admin-field">
-            <label className="admin-label">Resume URL</label>
+            <label className="admin-label">Heading</label>
             <input
               className="admin-input"
-              type="url"
-              value={content.contact.resumeUrl}
-              onChange={e => setContact('resumeUrl', e.target.value)}
+              value={footer.heading ?? ''}
+              onChange={e => setFooter('heading', e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="admin-field">
+          <label className="admin-label">Description</label>
+          <textarea
+            className="admin-textarea"
+            rows={3}
+            value={footer.description ?? ''}
+            onChange={e => setFooter('description', e.target.value)}
+          />
+        </div>
+        <div className="admin-form-row">
+          <div className="admin-field">
+            <label className="admin-label">CTA Label</label>
+            <input
+              className="admin-input"
+              value={footer.ctaLabel ?? ''}
+              onChange={e => setFooter('ctaLabel', e.target.value)}
+            />
+          </div>
+          <div className="admin-field">
+            <label className="admin-label">Copyright</label>
+            <input
+              className="admin-input"
+              value={footer.copyright ?? ''}
+              onChange={e => setFooter('copyright', e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="admin-form-row">
+          <div className="admin-field">
+            <label className="admin-label">Secondary Link Label</label>
+            <input
+              className="admin-input"
+              value={footer.secondaryLink?.label ?? ''}
+              onChange={e =>
+                setFooter('secondaryLink', { ...footer.secondaryLink, label: e.target.value })
+              }
+            />
+          </div>
+          <div className="admin-field">
+            <label className="admin-label">Secondary Link href</label>
+            <input
+              className="admin-input"
+              value={footer.secondaryLink?.href ?? ''}
+              onChange={e =>
+                setFooter('secondaryLink', { ...footer.secondaryLink, href: e.target.value })
+              }
             />
           </div>
         </div>
       </section>
 
-      {/* ── Save ─────────────────────────────────────── */}
+      {/* ── Footer (case study) ───────────────────────── */}
+      <section className="admin-form-section">
+        <h2 className="admin-form-section-title">Footer — Case Study</h2>
+        <div className="admin-form-row">
+          <div className="admin-field">
+            <label className="admin-label">Eyebrow</label>
+            <input
+              className="admin-input"
+              value={footerCS.eyebrow ?? ''}
+              onChange={e => setFooterCaseStudy('eyebrow', e.target.value)}
+            />
+          </div>
+          <div className="admin-field">
+            <label className="admin-label">Heading</label>
+            <input
+              className="admin-input"
+              value={footerCS.heading ?? ''}
+              onChange={e => setFooterCaseStudy('heading', e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="admin-field">
+          <label className="admin-label">Description</label>
+          <textarea
+            className="admin-textarea"
+            rows={3}
+            value={footerCS.description ?? ''}
+            onChange={e => setFooterCaseStudy('description', e.target.value)}
+          />
+        </div>
+        <div className="admin-field">
+          <label className="admin-label">CTA Label</label>
+          <input
+            className="admin-input"
+            value={footerCS.ctaLabel ?? ''}
+            onChange={e => setFooterCaseStudy('ctaLabel', e.target.value)}
+          />
+        </div>
+      </section>
+
+      {/* ── Save ──────────────────────────────────────── */}
       <div className="admin-form-actions">
         <button className="admin-btn-primary" onClick={handleSave} disabled={saving}>
           {saving ? 'Saving…' : 'Save changes'}
