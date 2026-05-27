@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     'Cody Eanes is a design leader based in Richmond, VA — directing UX strategy, product design, and AI-integrated processes for complex multi-stakeholder engagements.',
   metadataBase: new URL('https://codyeanes.com'),
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
   openGraph: {
     type: 'website',
     siteName: 'Cody Eanes',
@@ -21,7 +24,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
