@@ -1069,7 +1069,7 @@
     "card": {
       "role": "Solo \u2014 Strategy, Design, Engineering, Deployment",
       "brand": "codyeanes.com",
-      "title": "I built this. All of it. Here's what that changes.",
+      "title": "I built this. All of it.",
       "description": "A meta case study about what happens when a design leader runs the full product lifecycle solo \u2014 from content strategy to deployed CMS \u2014 and what it changes about how you lead.",
       "metrics": [
         {
@@ -1089,7 +1089,7 @@
       "imageAlt": "codyeanes.com \u2014 portfolio and CMS"
     },
     "hero": {
-      "title": "I built this. All of it. Here's what that changes.",
+      "title": "I built this. All of it.",
       "subtitle": "This case study is not about a website. It's about what happens when a design leader removes the walls between disciplines and runs the whole product lifecycle himself. The website is evidence. The process is the point.",
       "meta": [
         {
@@ -1292,6 +1292,18 @@
             "subtitle": "GitHub API writes. Every save commits to the repo. Vercel rebuilds automatically."
           }
         ]
+      },
+      {
+        "type": "projectOverview",
+        "background": "surface",
+        "eyebrow": "The CMS",
+        "heading": null,
+        "paragraphs": [
+          "The /admin interface handles the full content lifecycle without touching code.",
+          "Projects, sections, and site content are all editable from a single password-protected dashboard. Every save commits directly to the repo \u2014 no terminal, no deploy command, no engineering overhead."
+        ],
+        "image": "/images/this-site/cms-dashboard.png",
+        "imageAlt": "The /admin CMS dashboard \u2014 project list and visual section editor"
       },
       {
         "type": "outcomes",
