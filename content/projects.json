@@ -1,14 +1,14 @@
 [
   {
     "slug": "wegovy",
-    "order": 1,
+    "order": 2,
     "visible": true,
     "reversed": false,
     "card": {
       "role": "UX Director",
       "brand": "Wegovy",
       "title": "Designing A New Experience For Change Seekers",
-      "description": "A ground-up rebuild of Wegovy.com — shifting a clinical pharma site toward a consumer-centered lifestyle journey. I directed UX strategy, content architecture, and an AI-architected wayfinding quiz with 45 unique outcome combinations.",
+      "description": "A ground-up rebuild of Wegovy.com \u2014 shifting a clinical pharma site toward a consumer-centered lifestyle journey. I directed UX strategy, content architecture, and an AI-architected wayfinding quiz with 45 unique outcome combinations.",
       "metrics": [
         {
           "value": "45",
@@ -50,11 +50,11 @@
         "background": "default",
         "eyebrow": "The Project",
         "paragraphs": [
-          "I led the ground-up rebuild of Wegovy.com, directing UX strategy, content architecture, and client relationships across a five-month engagement. Working alongside a UI Director, content strategists, and copywriters, I owned the experience vision from kickoff through launch — facilitating workshops, leading wireframe development, and serving as the primary point of contact for stakeholder communication and developer support during the AEM build.",
+          "I led the ground-up rebuild of Wegovy.com, directing UX strategy, content architecture, and client relationships across a five-month engagement. Working alongside a UI Director, content strategists, and copywriters, I owned the experience vision from kickoff through launch \u2014 facilitating workshops, leading wireframe development, and serving as the primary point of contact for stakeholder communication and developer support during the AEM build.",
           "This project also marked a milestone in how I leverage AI as a design tool, using ChatGPT, Claude, and Figma Make to architect a wayfinding quiz with <strong>45 unique outcome combinations</strong>."
         ],
         "image": "/images/wegovy/overview.png",
-        "imageAlt": "Wegovy.com redesign — MacBook mockup"
+        "imageAlt": "Wegovy.com redesign \u2014 MacBook mockup"
       },
       {
         "type": "problemCards",
@@ -63,14 +63,14 @@
         "heading": "Two things needed to change.",
         "cards": [
           {
-            "label": "01 — Accessibility",
+            "label": "01 \u2014 Accessibility",
             "title": "A site that couldn't be used by everyone",
-            "body": "Text in images. Insufficient contrast. Compliance failures at nearly every level. The site couldn't meet WCAG standards — a critical failure for a healthcare product in a regulated space."
+            "body": "Text in images. Insufficient contrast. Compliance failures at nearly every level. The site couldn't meet WCAG standards \u2014 a critical failure for a healthcare product in a regulated space."
           },
           {
-            "label": "02 — Experience",
+            "label": "02 \u2014 Experience",
             "title": "Clinical documentation framed as a consumer journey",
-            "body": "Wegovy is a lifestyle product. The site read like a pharmaceutical package insert. The architecture, tone, and visual design all prioritized compliance over connection — leaving real patients without a clear path forward."
+            "body": "Wegovy is a lifestyle product. The site read like a pharmaceutical package insert. The architecture, tone, and visual design all prioritized compliance over connection \u2014 leaving real patients without a clear path forward."
           }
         ]
       },
@@ -79,12 +79,12 @@
         "background": "default",
         "eyebrow": "Strategic Reframe",
         "heading": "Organizing around\nthe patient journey.",
-        "body": "We replaced a compliance-first architecture with a four-stage consumer journey — built around the questions real patients actually ask, in the order they ask them.",
+        "body": "We replaced a compliance-first architecture with a four-stage consumer journey \u2014 built around the questions real patients actually ask, in the order they ask them.",
         "stages": [
           {
             "number": "01",
             "title": "Is Wegovy Right for Me",
-            "subtitle": "Education and eligibility — meeting patients before they've decided."
+            "subtitle": "Education and eligibility \u2014 meeting patients before they've decided."
           },
           {
             "number": "02",
@@ -94,12 +94,12 @@
           {
             "number": "03",
             "title": "What Will I Pay",
-            "subtitle": "Cost, insurance, and savings programs — the questions that kill conversion."
+            "subtitle": "Cost, insurance, and savings programs \u2014 the questions that kill conversion."
           },
           {
             "number": "04",
             "title": "Getting Started",
-            "subtitle": "Onboarding and expectations — setting patients up for success after they've decided."
+            "subtitle": "Onboarding and expectations \u2014 setting patients up for success after they've decided."
           }
         ]
       },
@@ -112,10 +112,10 @@
         "numberStrong": "unique CTA\ncombinations",
         "numberSub": "mapped by AI",
         "bodyTexts": [
-          "The quiz was the most technically complex piece of the project — and the most human. The challenge wasn't writing five questions. It was ensuring every combination of answers led somewhere meaningful, not a dead end or a generic page.",
-          "I used AI (ChatGPT and Claude) to architect the full decision tree — mapping all possible answer combinations to appropriate outcome CTAs. What would have taken weeks of spreadsheet logic took days. Figma Make handled the prototype, letting us test real paths with stakeholders before a line of AEM code was written."
+          "The quiz was the most technically complex piece of the project \u2014 and the most human. The challenge wasn't writing five questions. It was ensuring every combination of answers led somewhere meaningful, not a dead end or a generic page.",
+          "I used AI (ChatGPT and Claude) to architect the full decision tree \u2014 mapping all possible answer combinations to appropriate outcome CTAs. What would have taken weeks of spreadsheet logic took days. Figma Make handled the prototype, letting us test real paths with stakeholders before a line of AEM code was written."
         ],
-        "pullquote": "AI didn't replace the thinking — it accelerated it.",
+        "pullquote": "AI didn't replace the thinking \u2014 it accelerated it.",
         "details": [
           {
             "heading": "How It Was Built",
@@ -128,7 +128,7 @@
           },
           {
             "heading": "Client Reaction",
-            "body": "Overwhelmingly positive. The quiz became one of the defining features of the new site — a tangible example of AI as a design tool, not a replacement for design thinking."
+            "body": "Overwhelmingly positive. The quiz became one of the defining features of the new site \u2014 a tangible example of AI as a design tool, not a replacement for design thinking."
           }
         ]
       },
@@ -209,7 +209,7 @@
   },
   {
     "slug": "wendys",
-    "order": 2,
+    "order": 3,
     "visible": true,
     "reversed": true,
     "card": {
@@ -223,7 +223,7 @@
           "label": "Fewer\ninteractions"
         },
         {
-          "value": "30→10",
+          "value": "30\u219210",
           "label": "Taps to\ncomplete order"
         }
       ],
@@ -259,7 +259,7 @@
         "eyebrow": "The Project",
         "paragraphs": [
           "As the sole design lead on Wendy's digital ordering squad, I spent a year embedded with the product and engineering teams focused on one mission: <strong>make ordering faster.</strong>",
-          "The competitive landscape demanded it. QSR value wars were intensifying. Competitors were shipping leaner flows. And our own data confirmed what we already suspected — too many taps, too many screens standing between a customer and their order.",
+          "The competitive landscape demanded it. QSR value wars were intensifying. Competitors were shipping leaner flows. And our own data confirmed what we already suspected \u2014 too many taps, too many screens standing between a customer and their order.",
           "The result: a <strong>70% reduction</strong> in the interactions required to complete an order."
         ],
         "image": "/images/wendys/overview.png",
@@ -274,7 +274,7 @@
         "source": "The brief, verbatim",
         "bodyTexts": [
           "That one sentence did more to focus the work than any requirements document could. Every design decision had a test: could a driver complete this in the span of a red light? If not, something needed to change.",
-          "The stakes were concrete. Competitors were already shipping faster. User research confirmed the scale of the problem — <strong>30+ interactions</strong> to complete a single order. But the path forward wasn't obvious, because not everyone agreed there was a problem."
+          "The stakes were concrete. Competitors were already shipping faster. User research confirmed the scale of the problem \u2014 <strong>30+ interactions</strong> to complete a single order. But the path forward wasn't obvious, because not everyone agreed there was a problem."
         ]
       },
       {
@@ -282,14 +282,14 @@
         "background": "default",
         "eyebrow": "The Work",
         "heading": "Three pockets of change.",
-        "body": "The redesign wasn't a wholesale rebuild — it was surgical. We identified three distinct areas where friction compounded and engineered each one down independently.",
+        "body": "The redesign wasn't a wholesale rebuild \u2014 it was surgical. We identified three distinct areas where friction compounded and engineered each one down independently.",
         "pockets": [
           {
             "number": "01",
             "title": "Location",
             "problem": "Five decisions before users could even see a menu. New user setup was a maze. Returning users had to re-confirm everything they'd already told us.",
             "solution": "Defaulting logic built around recent preferences. Streamlined new user setup. Location intelligence that worked in the background, not in the way.",
-            "impact": "–5 taps before ordering even began"
+            "impact": "\u20135 taps before ordering even began"
           },
           {
             "number": "02",
@@ -301,7 +301,7 @@
           {
             "number": "03",
             "title": "Checkout",
-            "problem": "The bag screen tried to do everything at once — order review, payment, pickup options, upsells, loyalty rewards. The result was a wall of decisions that caused errors and abandonment.",
+            "problem": "The bag screen tried to do everything at once \u2014 order review, payment, pickup options, upsells, loyalty rewards. The result was a wall of decisions that caused errors and abandonment.",
             "solution": "Split into two purpose-built screens: order verification first, payment and logistics second. Each screen had one job. Users moved faster and made fewer mistakes.",
             "impact": "Fewer errors, faster completion"
           }
@@ -314,19 +314,19 @@
         "heading": "Seventy percent.",
         "number": "70",
         "numberStrong": "% fewer\ninteractions",
-        "numberSub": "30+ taps → under 10",
+        "numberSub": "30+ taps \u2192 under 10",
         "bodyTexts": [
-          "That's the headline. But the number only happened because every other thing fell into place first — the research, the trust, the engineering relationships, the stakeholder work. The design was almost the easy part."
+          "That's the headline. But the number only happened because every other thing fell into place first \u2014 the research, the trust, the engineering relationships, the stakeholder work. The design was almost the easy part."
         ],
         "pullquote": "70% reduction is the headline. The real work was creating the conditions that made those changes possible.",
         "details": [
           {
             "heading": "App Store Validation",
-            "body": "The improvements were visible enough that users wrote about them. App Store reviews specifically called out the faster ordering experience — unprompted feedback that confirmed the reduction wasn't just measurable, it was felt."
+            "body": "The improvements were visible enough that users wrote about them. App Store reviews specifically called out the faster ordering experience \u2014 unprompted feedback that confirmed the reduction wasn't just measurable, it was felt."
           },
           {
-            "heading": "Design → Advocacy",
-            "body": "The Director of Product, initially one of the harder relationships to navigate, became a genuine design advocate by the end of the engagement. That trust outlasted the project — and opened doors that design output alone never would have."
+            "heading": "Design \u2192 Advocacy",
+            "body": "The Director of Product, initially one of the harder relationships to navigate, became a genuine design advocate by the end of the engagement. That trust outlasted the project \u2014 and opened doors that design output alone never would have."
           }
         ]
       },
@@ -336,7 +336,7 @@
         "eyebrow": "The Real Work",
         "heading": "People problems.",
         "bodyTexts": [
-          "A significant portion of early research feedback insisted the app was fine. \"Loyalists\" — users who had adapted to every inefficiency — confused familiarity with quality. The key stakeholder on the original build fell into this camp too.",
+          "A significant portion of early research feedback insisted the app was fine. \"Loyalists\" \u2014 users who had adapted to every inefficiency \u2014 confused familiarity with quality. The key stakeholder on the original build fell into this camp too.",
           "The solution wasn't better designs. It was better evidence. User data became the only currency that mattered."
         ],
         "columns": [
@@ -346,7 +346,7 @@
               "Power users had adapted to every inefficiency",
               "Familiarity was being mistaken for usability",
               "User research had to do the heavy lifting",
-              "Data — not opinion — was the only argument that landed",
+              "Data \u2014 not opinion \u2014 was the only argument that landed",
               "The resistant stakeholder was eventually won over by the numbers"
             ]
           },
@@ -386,7 +386,7 @@
             "label": "Taps to place\na complete order"
           },
           {
-            "value": "–5",
+            "value": "\u20135",
             "label": "Pre-menu taps\neliminated"
           }
         ],
@@ -412,14 +412,14 @@
   },
   {
     "slug": "virginia-state-university",
-    "order": 3,
+    "order": 4,
     "visible": true,
     "reversed": false,
     "card": {
       "role": "UX Lead",
       "brand": "Virginia State University",
       "title": "A Digital Presence Worthy of Its Legacy",
-      "description": "End-to-end UX strategy for Virginia State University — modernizing a 2009-era digital experience while honoring the legacy of one of America's longest-running HBCUs.",
+      "description": "End-to-end UX strategy for Virginia State University \u2014 modernizing a 2009-era digital experience while honoring the legacy of one of America's longest-running HBCUs.",
       "metrics": [],
       "image": "/images/home/vsu-card.jpg",
       "imageAlt": "Virginia State University website"
@@ -452,7 +452,7 @@
         "background": "default",
         "eyebrow": "The Project",
         "paragraphs": [
-          "As UX Lead, I directed end-to-end research and design strategy for Virginia State University's digital transformation — a remote engagement conducted during COVID in 2020, partnering with a UX Architect to modernize one of the nation's longest-running HBCUs.",
+          "As UX Lead, I directed end-to-end research and design strategy for Virginia State University's digital transformation \u2014 a remote engagement conducted during COVID in 2020, partnering with a UX Architect to modernize one of the nation's longest-running HBCUs.",
           "The scope was substantial: <strong>100+ pages</strong> organized across six primary navigation trees, serving five distinct audience groups with fundamentally different needs and mental models.",
           "The tools were Sketch, Craft, and InVision. The challenge was far larger than the toolset."
         ],
@@ -464,17 +464,17 @@
         "background": "surface",
         "eyebrow": "The Opportunity",
         "heading": "A legacy institution.\nA dated presence.",
-        "body": "Virginia State University holds a distinguished legacy as one of the nation's longest-running HBCUs. But in 2020, its web presence reflected a 2009-era experience — a gap that mattered more than ever in a competitive higher education landscape.",
+        "body": "Virginia State University holds a distinguished legacy as one of the nation's longest-running HBCUs. But in 2020, its web presence reflected a 2009-era experience \u2014 a gap that mattered more than ever in a competitive higher education landscape.",
         "cards": [
           {
-            "label": "01 — The Gap",
+            "label": "01 \u2014 The Gap",
             "title": "Legacy institution, dated digital reality",
-            "body": "Higher education is a buyer's market. Prospective students evaluate institutions digitally before they ever set foot on campus. VSU was competing alongside peer HBCUs — Howard, Hampton, Spelman — with a site that couldn't tell its story or serve its community."
+            "body": "Higher education is a buyer's market. Prospective students evaluate institutions digitally before they ever set foot on campus. VSU was competing alongside peer HBCUs \u2014 Howard, Hampton, Spelman \u2014 with a site that couldn't tell its story or serve its community."
           },
           {
-            "label": "02 — The Mission",
+            "label": "02 \u2014 The Mission",
             "title": "Modernize without erasing the identity",
-            "body": "The goal wasn't just a visual refresh. It was rebuilding the digital ecosystem to serve a diverse audience, reinforce brand equity in a crowded landscape, and capture the spirit of campus life — all without sacrificing accessibility compliance."
+            "body": "The goal wasn't just a visual refresh. It was rebuilding the digital ecosystem to serve a diverse audience, reinforce brand equity in a crowded landscape, and capture the spirit of campus life \u2014 all without sacrificing accessibility compliance."
           }
         ]
       },
@@ -486,7 +486,7 @@
         "bigNumber": "5",
         "bigNumberStrong": "distinct\naudience groups",
         "bigNumberSub": "hypothesis-driven survey methodology",
-        "body": "Research began with a hypothesis-driven survey methodology across all five audience groups — each with different goals, different entry points, and different definitions of success on the site.",
+        "body": "Research began with a hypothesis-driven survey methodology across all five audience groups \u2014 each with different goals, different entry points, and different definitions of success on the site.",
         "audiences": [
           {
             "number": "01",
@@ -518,7 +518,7 @@
         "details": [
           {
             "heading": "Personas as Decision Tools",
-            "body": "The five personas weren't deliverables — they were instruments. They shaped every IA debate, every navigation tradeoff, every content priority. A persona that sits in a deck and never gets referenced again isn't a design tool. It's a document."
+            "body": "The five personas weren't deliverables \u2014 they were instruments. They shaped every IA debate, every navigation tradeoff, every content priority. A persona that sits in a deck and never gets referenced again isn't a design tool. It's a document."
           },
           {
             "heading": "The Unifying Insight",
@@ -531,18 +531,18 @@
         "background": "surface-alt",
         "eyebrow": "Information Architecture",
         "heading": "100+ pages.\nThree key decisions.",
-        "body": "A site of this scale can't be designed page by page. We moved to a template-based architecture — designing systems, not screens — and made three structural decisions that shaped everything else.",
+        "body": "A site of this scale can't be designed page by page. We moved to a template-based architecture \u2014 designing systems, not screens \u2014 and made three structural decisions that shaped everything else.",
         "items": [
           {
             "number": "01",
             "title": "Mega-Navigation",
-            "body": "VSU's content hierarchy was genuinely complex — six primary navigation trees serving audiences with completely different needs. A conventional nav would bury content or force users into deep drilling.\n\nThe mega-nav surfaced secondary destinations at the top level, reducing cognitive load without hiding complexity.",
+            "body": "VSU's content hierarchy was genuinely complex \u2014 six primary navigation trees serving audiences with completely different needs. A conventional nav would bury content or force users into deep drilling.\n\nThe mega-nav surfaced secondary destinations at the top level, reducing cognitive load without hiding complexity.",
             "impact": "Reduced browsing depth"
           },
           {
             "number": "02",
             "title": "Global Utility Header",
-            "body": "Analytics told us ~80% of homepage traffic had the same intent: find email, find directory, find portal. That intent was being sent into the main nav to compete with prospective student content.\n\nThe utility header gave returning users a dedicated lane — and freed the main nav to speak to new audiences.",
+            "body": "Analytics told us ~80% of homepage traffic had the same intent: find email, find directory, find portal. That intent was being sent into the main nav to compete with prospective student content.\n\nThe utility header gave returning users a dedicated lane \u2014 and freed the main nav to speak to new audiences.",
             "impact": "80% of traffic intent, one click"
           },
           {
@@ -572,7 +572,7 @@
           {
             "title": "Stakeholder Navigation",
             "items": [
-              "Early sprint reviews met with silence — not agreement",
+              "Early sprint reviews met with silence \u2014 not agreement",
               "Developed targeted discussion prompts to surface real feedback",
               "Reframed decisions as tradeoffs, not recommendations",
               "Built informal rapport alongside formal review cadence",
@@ -582,7 +582,7 @@
           {
             "title": "508 Accessibility",
             "items": [
-              "Third 508 engagement — first in higher education",
+              "Third 508 engagement \u2014 first in higher education",
               "Healthcare and financial services experiences applied to a new context",
               "Campus atmosphere and emotional resonance retained within compliance",
               "Accessibility treated as a design lens, not a compliance checklist",
@@ -607,7 +607,7 @@
           },
           {
             "value": "508",
-            "label": "Compliant — first\nhigher ed engagement"
+            "label": "Compliant \u2014 first\nhigher ed engagement"
           }
         ],
         "list": [
@@ -622,7 +622,7 @@
     ],
     "reflection": {
       "quote": "Accessibility isn't a compliance checkbox. It's a design lens. And every time we made a decision that served compliance, it almost always served clarity too.",
-      "followUp": "This project also reinforced something about how I think about scale: strategic template systems outperform page-by-page design every time. And proactive stakeholder engagement isn't a soft skill — it's as critical as the design work itself."
+      "followUp": "This project also reinforced something about how I think about scale: strategic template systems outperform page-by-page design every time. And proactive stakeholder engagement isn't a soft skill \u2014 it's as critical as the design work itself."
     },
     "nextProject": {
       "slug": "apex-tools",
@@ -632,14 +632,14 @@
   },
   {
     "slug": "apex-tools",
-    "order": 4,
+    "order": 5,
     "visible": true,
     "reversed": true,
     "card": {
       "role": "ACD, Product Design",
       "brand": "Apex Tools",
       "title": "Revitalizing Three Professional Tool Brands at Once",
-      "description": "Led the simultaneous digital relaunch of three professional tool brands — Gearwrench, Crescent, and SATA — with distinct brand identities built on shared infrastructure.",
+      "description": "Led the simultaneous digital relaunch of three professional tool brands \u2014 Gearwrench, Crescent, and SATA \u2014 with distinct brand identities built on shared infrastructure.",
       "metrics": [],
       "image": "/images/home/apex-card.jpg",
       "imageAlt": "Apex Tools brand sites"
@@ -672,7 +672,7 @@
         "background": "default",
         "eyebrow": "The Project",
         "paragraphs": [
-          "ACD on the simultaneous digital relaunch of three professional tool brands under the Apex Tool Group umbrella. Three distinct audiences — mechanics (Gearwrench), contractors and DIY (Crescent), industrial and body shop (SATA) — each with their own visual identity, their own content strategy, and their own expectations. One shared platform underneath all of it.",
+          "ACD on the simultaneous digital relaunch of three professional tool brands under the Apex Tool Group umbrella. Three distinct audiences \u2014 mechanics (Gearwrench), contractors and DIY (Crescent), industrial and body shop (SATA) \u2014 each with their own visual identity, their own content strategy, and their own expectations. One shared platform underneath all of it.",
           "The challenge wasn't building three websites. It was building one system flexible enough to serve three entirely different product stories without collapsing into a generic middle ground."
         ],
         "image": "/images/apex/overview.png",
@@ -713,7 +713,7 @@
         "background": "default",
         "eyebrow": "The Brands",
         "heading": "One platform. Three identities.",
-        "body": "Each brand served a different professional audience. Design decisions that worked for one didn't automatically work for the others — and that was the point. The system had to hold without flattening.",
+        "body": "Each brand served a different professional audience. Design decisions that worked for one didn't automatically work for the others \u2014 and that was the point. The system had to hold without flattening.",
         "brands": [
           {
             "number": "01",
@@ -741,7 +741,7 @@
         "eyebrow": "The Work",
         "heading": "E-commerce complexity at three scales.",
         "bodyTexts": [
-          "Each brand sat at the intersection of direct-to-consumer, retail partners, and industrial distributors — all within one coherent experience. Deep product catalogs demanded filtering by tool type, drive size, material, and application. And three brand teams, each with strong existing identities and legitimate opinions, meant the governance model mattered as much as the design."
+          "Each brand sat at the intersection of direct-to-consumer, retail partners, and industrial distributors \u2014 all within one coherent experience. Deep product catalogs demanded filtering by tool type, drive size, material, and application. And three brand teams, each with strong existing identities and legitimate opinions, meant the governance model mattered as much as the design."
         ],
         "columns": [
           {
@@ -782,7 +782,7 @@
         "numberStrong": "professional tool brands",
         "numberSub": "one shared infrastructure",
         "bodyTexts": [
-          "Three simultaneous brand launches on a shared platform. The number sounds straightforward. The execution required constant navigation between brand-level advocacy and platform-level discipline — and knowing exactly which instinct to trust in each moment."
+          "Three simultaneous brand launches on a shared platform. The number sounds straightforward. The execution required constant navigation between brand-level advocacy and platform-level discipline \u2014 and knowing exactly which instinct to trust in each moment."
         ],
         "pullquote": "The right boundary between brand differentiation and platform standardization isn't a design decision. It's a leadership decision.",
         "details": []
@@ -798,11 +798,11 @@
             "label": "Brands launched\non one platform"
           },
           {
-            "value": "↑",
+            "value": "\u2191",
             "label": "Conversion rates\nacross all three sites"
           },
           {
-            "value": "↓",
+            "value": "\u2193",
             "label": "Time-to-product\nacross all brands"
           }
         ],
@@ -817,8 +817,8 @@
       }
     ],
     "reflection": {
-      "quote": "Multi-brand work demands comfort with tension. Brand teams will always push for differentiation; platform teams will always push for standardization. Neither instinct is wrong — the skill is finding the right boundary between them.",
-      "followUp": "On APEX, that boundary lived at the UX layer. Visual identity was entirely brand-owned. Interaction patterns were platform-owned. The moment we made that explicit — and stopped relitigating it in every design review — everything moved faster."
+      "quote": "Multi-brand work demands comfort with tension. Brand teams will always push for differentiation; platform teams will always push for standardization. Neither instinct is wrong \u2014 the skill is finding the right boundary between them.",
+      "followUp": "On APEX, that boundary lived at the UX layer. Visual identity was entirely brand-owned. Interaction patterns were platform-owned. The moment we made that explicit \u2014 and stopped relitigating it in every design review \u2014 everything moved faster."
     },
     "nextProject": {
       "slug": "sherwin-williams",
@@ -828,14 +828,14 @@
   },
   {
     "slug": "sherwin-williams",
-    "order": 5,
+    "order": 6,
     "visible": true,
     "reversed": false,
     "card": {
       "role": "ACD, Product Design",
       "brand": "Sherwin-Williams",
       "title": "A Multi-Brand Digital Transformation",
-      "description": "Five consumer brand relaunches under one engagement — Krylon, Cabot, Purdy, Thompson's Water Seal, and Minwax — each distinct in voice, unified in architecture.",
+      "description": "Five consumer brand relaunches under one engagement \u2014 Krylon, Cabot, Purdy, Thompson's Water Seal, and Minwax \u2014 each distinct in voice, unified in architecture.",
       "metrics": [],
       "image": "/images/home/sherwin-card.png",
       "imageAlt": "Sherwin-Williams brand sites"
@@ -903,7 +903,7 @@
             "number": "04",
             "name": "Thompson's Water Seal",
             "audience": "Homeowners",
-            "description": "Waterproofing sealants with strong seasonal and regional demand. Simple product line with high educational content needs — the 'why' matters as much as the 'what.'"
+            "description": "Waterproofing sealants with strong seasonal and regional demand. Simple product line with high educational content needs \u2014 the 'why' matters as much as the 'what.'"
           },
           {
             "number": "05",
@@ -922,7 +922,7 @@
         "source": "Reflection on the engagement",
         "bodyTexts": [
           "It would have been faster in the short term to build five independent sites. Each brand team gets exactly what they want. No negotiation. No governance overhead. Ship and move on.",
-          "But that approach leaves Sherwin-Williams with five separate codebases, five separate design systems, five separate maintenance burdens — and no ability to onboard a sixth brand without rebuilding everything from scratch. The system approach required more upfront investment and more coordination overhead. It also positioned the business for sustainable growth rather than accumulating technical debt with every new brand or feature request."
+          "But that approach leaves Sherwin-Williams with five separate codebases, five separate design systems, five separate maintenance burdens \u2014 and no ability to onboard a sixth brand without rebuilding everything from scratch. The system approach required more upfront investment and more coordination overhead. It also positioned the business for sustainable growth rather than accumulating technical debt with every new brand or feature request."
         ]
       },
       {
@@ -930,10 +930,10 @@
         "background": "default",
         "eyebrow": "The Problem",
         "heading": "Four things broken across five brands.",
-        "body": "Before touching design, we needed to understand what was actually failing. User research across all five brands surfaced a consistent set of problems — different in severity by brand, identical in kind.",
+        "body": "Before touching design, we needed to understand what was actually failing. User research across all five brands surfaced a consistent set of problems \u2014 different in severity by brand, identical in kind.",
         "findings": [
           {
-            "title": "01 — Product Discovery",
+            "title": "01 \u2014 Product Discovery",
             "items": [
               "Search and browse broken across all five brands",
               "Users couldn't filter by project type, surface, or finish",
@@ -942,7 +942,7 @@
             ]
           },
           {
-            "title": "02 — Content Disconnection",
+            "title": "02 \u2014 Content Disconnection",
             "items": [
               "Rich how-to content existed but lived separately from products",
               "No bridge between inspiration/education and purchase",
@@ -951,7 +951,7 @@
             ]
           },
           {
-            "title": "03 — Mobile Experience",
+            "title": "03 \u2014 Mobile Experience",
             "items": [
               "In-store mobile research behavior was significant and unserved",
               "Users consulting product pages in hardware aisles got a desktop experience",
@@ -960,12 +960,12 @@
             ]
           },
           {
-            "title": "04 — Brand Flattening",
+            "title": "04 \u2014 Brand Flattening",
             "items": [
               "Despite distinct brand identities, sites felt like one generic template",
               "Krylon and Purdy had nearly identical homepage structures",
               "Visual differentiation that existed offline wasn't translating digitally",
-              "Brand teams were frustrated — the investment in brand wasn't showing up online"
+              "Brand teams were frustrated \u2014 the investment in brand wasn't showing up online"
             ]
           }
         ]
@@ -979,7 +979,7 @@
         "numberStrong": "consumer brands",
         "numberSub": "one shared design system",
         "bodyTexts": [
-          "Five simultaneous brand launches. Different visual identities, different content strategies, different audiences. One underlying system flexible enough to serve them all distinctly — and scalable enough that a sixth brand could plug in without a rebuild."
+          "Five simultaneous brand launches. Different visual identities, different content strategies, different audiences. One underlying system flexible enough to serve them all distinctly \u2014 and scalable enough that a sixth brand could plug in without a rebuild."
         ],
         "pullquote": "Standardized: interaction patterns, navigation, product detail templates, accessibility, performance. Customized: typography, color, imagery, tone, feature prioritization. Those two lists never got mixed up.",
         "details": []
@@ -1033,11 +1033,11 @@
             "label": "Brand sites launched\nsimultaneously"
           },
           {
-            "value": "↑",
+            "value": "\u2191",
             "label": "Product discovery\nacross all brands"
           },
           {
-            "value": "↑",
+            "value": "\u2191",
             "label": "Mobile usability\nacross all brands"
           }
         ],
@@ -1046,7 +1046,7 @@
           "How-to content woven into purchase journey on Thompson's and Krylon",
           "Mobile usability significantly improved, in-store use case specifically designed for",
           "Shared system established as the foundation for future brand acquisitions",
-          "Each brand team felt — and could demonstrate — distinct brand expression online",
+          "Each brand team felt \u2014 and could demonstrate \u2014 distinct brand expression online",
           "Post-launch research confirmed users perceived each brand's unique value more clearly"
         ]
       }
@@ -1067,10 +1067,10 @@
     "visible": true,
     "reversed": false,
     "card": {
-      "role": "Solo — Strategy, Design, Engineering, Deployment",
-      "brand": "My Brand",
+      "role": "Solo \u2014 Strategy, Design, Engineering, Deployment",
+      "brand": "codyeanes.com",
       "title": "I built this. All of it.",
-      "description": "A meta case study about what happens when a design leader runs the full product lifecycle solo — from content strategy to deployed CMS — and what it changes about how you lead.",
+      "description": "A meta case study about what happens when a design leader runs the full product lifecycle solo \u2014 from content strategy to deployed CMS \u2014 and what it changes about how you lead.",
       "metrics": [
         {
           "value": "3 wks",
@@ -1086,19 +1086,19 @@
         }
       ],
       "image": "/images/this-site/card.jpg",
-      "imageAlt": "codyeanes.com — portfolio and CMS"
+      "imageAlt": "codyeanes.com \u2014 portfolio and CMS"
     },
     "hero": {
-      "title": "I built this. All of it. Here's what that changes.",
+      "title": "I built this. All of it.",
       "subtitle": "This case study is not about a website. It's about what happens when a design leader removes the walls between disciplines and runs the whole product lifecycle himself. The website is evidence. The process is the point.",
       "meta": [
         {
           "label": "Role",
-          "value": "Solo — Strategy, Design, Engineering, Deployment"
+          "value": "Solo \u2014 Strategy, Design, Engineering, Deployment"
         },
         {
           "label": "Timeline",
-          "value": "~3 weeks, content strategy → live CMS"
+          "value": "~3 weeks, content strategy \u2192 live CMS"
         },
         {
           "label": "Stack",
@@ -1120,64 +1120,86 @@
         "background": "surface",
         "eyebrow": "The Brief",
         "heading": "A portfolio that was contradicting itself",
-        "quote": "Most designers outsource everything outside of design. That outsourcing creates blind spots — in how you write briefs, how you scope projects, how you talk to engineers, how you lead a product team. This project was about closing those gaps intentionally.",
+        "quote": "Most designers outsource everything outside of design. This project was about closing those gaps.",
         "source": "The real brief",
         "bodyTexts": [
-          "The surface problem was simple: I needed a portfolio. The deeper problem was that a static Squarespace site was actively contradicting the claim that I think in systems and ship things.",
-          "The secondary problem: every update required cloning a repo and manually editing code. For a site that needed to evolve as fast as a job search, that friction was a liability.",
-          "So this became two briefs, not one. The first: build a portfolio that proves systems thinking. The second, which emerged post-launch: build the tools to keep it current without engineering overhead."
+          "The surface problem: I needed a portfolio. The deeper problem: a static Squarespace site was actively contradicting the claim that I think in systems and ship things.",
+          "Every update required cloning a repo and manually editing code. For a site that needed to evolve as fast as a job search, that friction was a liability.",
+          "So this became two briefs. Build a portfolio that proves systems thinking. Then \u2014 post-launch \u2014 build the tools to keep it current without engineering overhead."
         ]
       },
       {
-        "type": "projectOverview",
+        "type": "executionGrid",
         "background": "default",
         "eyebrow": "Phase 1",
         "heading": "Content strategy before design",
-        "paragraphs": [
-          "Before a single pixel, a content audit. Scraped the existing site. Identified every piece of copy. Ran it through one filter: does this language reflect someone moving toward Creative Director, or someone validating where they already are? Everything that did the latter got cut.",
-          "What remained became a structured markdown brief — a single source of truth handed to every subsequent phase, including design, engineering, and copy review. The positioning problem was real: taglines that read like a Twitter bio don't signal the same thing as a CD candidate who can frame a strategy.",
-          "Content strategy before design is a discipline problem, not a tool problem. Most designers skip it. This brief became the north star that kept every subsequent decision legible."
+        "bodyTexts": [
+          "Before a single pixel, a content audit. Most designers skip this step. It's a discipline problem, not a tool problem."
         ],
-        "image": "/images/this-site/content-strategy.png",
-        "imageAlt": "Content strategy markdown brief artifact"
+        "columns": [
+          {
+            "title": "The Audit",
+            "items": [
+              "Scraped every page of the existing site",
+              "Catalogued every headline, tagline, and description",
+              "Tagged each line: validates the past, or claims the future?"
+            ]
+          },
+          {
+            "title": "The Filter",
+            "items": [
+              "One question: does this reflect a CD candidate?",
+              "Everything that answered no got cut",
+              "What remained was rewritten to close the gap"
+            ]
+          },
+          {
+            "title": "The Output",
+            "items": [
+              "A structured markdown brief",
+              "Single source of truth for design, engineering, and copy",
+              "Every subsequent decision traced back to it"
+            ]
+          }
+        ]
       },
       {
         "type": "findingsGrid",
         "background": "surface",
         "eyebrow": "Phase 2",
         "heading": "Design system before site",
-        "body": "The design system was built before any page layouts. Tokens first, components second. The aesthetic direction came from a one-sentence brief: near-black, amber-accented, editorial — typographically bold where it counts, sparse everywhere else.",
+        "body": "Tokens first, components second. One-sentence brief: near-black, amber-accented, editorial \u2014 typographically bold where it counts, sparse everywhere else.",
         "findings": [
           {
             "title": "Color",
             "items": [
-              "Near-black (#0D0D0D) as the primary surface",
-              "Amber accent used sparingly — 3–4 times per viewport max",
-              "Warm authority without loudness — the work leads, the frame doesn't compete"
+              "Near-black (#0D0D0D) primary surface",
+              "Amber accent \u2014 3\u20134 touches per viewport max",
+              "Warm authority, not loudness"
             ]
           },
           {
             "title": "Typography",
             "items": [
-              "Roboto for display weight — editorial authority, not cold",
-              "DM Sans for body — readable at small sizes, distinctive at large",
-              "Fluid type scale using CSS clamp() — scales without breakpoint hacks"
+              "Roboto for display weight",
+              "DM Sans for body \u2014 readable and distinctive",
+              "Fluid scale via CSS clamp() \u2014 no breakpoint hacks"
             ]
           },
           {
-            "title": "Spacing & Tokens",
+            "title": "Tokens",
             "items": [
-              "Every spacing value defined as a CSS custom property before layout work began",
-              "Component-level background tokens: default, surface, surface-alt",
-              "Constraint-first: the system defined before the pages, not extracted from them"
+              "All spacing as CSS custom properties",
+              "Background variants: default, surface, surface-alt",
+              "System defined before pages, not extracted from them"
             ]
           },
           {
             "title": "Reference + Divergence",
             "items": [
-              "Referenced editorial portfolios and design-forward personal sites",
-              "Diverged from references: less visual noise, more typographic weight",
-              "Deliberate reduction — everything decorative was a question, not an assumption"
+              "Referenced editorial and design-forward portfolios",
+              "Diverged: less decoration, more typographic weight",
+              "Everything ornamental was a question, not a default"
             ]
           }
         ]
@@ -1185,11 +1207,11 @@
       {
         "type": "executionGrid",
         "background": "default",
-        "eyebrow": "Phase 3 — v1.0.0",
+        "eyebrow": "Phase 3 \u2014 v1.0.0",
         "heading": "Engineering & first launch",
         "bodyTexts": [
-          "First launch shipped May 20. Next.js 15 App Router, TypeScript, custom CSS — no Tailwind, full token control. Static generation for case study pages. Vercel deployment on push to main. Zero manual deploy steps after initial config.",
-          "This is where AI's role becomes explicit. The ability to hold a conversation with the codebase — to understand why a pattern was chosen, not just copy it — changed what was accessible. Accelerant, not author. Every architectural decision was made by a human who understood the tradeoffs."
+          "First launch shipped May 20. The design didn't stop at Figma \u2014 it went all the way to production.",
+          "This is where AI's role becomes explicit. Accelerant, not author. Every architectural decision was made by a human who understood the tradeoffs."
         ],
         "columns": [
           {
@@ -1197,24 +1219,24 @@
             "items": [
               "Next.js 15 App Router",
               "TypeScript",
-              "Custom CSS — no Tailwind, full token control",
-              "Static generation for case study pages via generateStaticParams"
+              "Custom CSS \u2014 full token control",
+              "Static generation via generateStaticParams"
             ]
           },
           {
             "title": "Deployment",
             "items": [
-              "Vercel — auto-deploy on push to main",
+              "Vercel \u2014 auto-deploy on push to main",
               "Zero manual steps after initial config",
-              "Custom domain, full SSL, edge CDN"
+              "Custom domain, SSL, edge CDN"
             ]
           },
           {
-            "title": "The Line to Land",
+            "title": "AI's Role",
             "items": [
-              "The design didn't stop at Figma",
-              "It went all the way to production",
-              "And then it kept going"
+              "Accelerant, not author",
+              "Architectural decisions made by a human",
+              "AI removed the parts that don't require judgment"
             ]
           }
         ]
@@ -1228,12 +1250,12 @@
           {
             "label": "The Friction",
             "title": "Every update required a commit",
-            "body": "Adding a project meant editing multiple JSON files locally, running a build, and pushing a commit. For a site that needed to evolve as fast as a job search, that's unacceptable friction."
+            "body": "Adding a project meant editing JSON files, running a local build, and pushing a commit. For a site evolving as fast as a job search, that's unacceptable."
           },
           {
             "label": "The Decision",
             "title": "Build custom over adopt headless",
-            "body": "Sanity, Contentful, and similar tools solve the right problem — but introduce dependency, cost, and abstraction. This problem was solvable in-house. Building it was itself a proof point."
+            "body": "Sanity and Contentful solve the right problem \u2014 but add dependency, cost, and abstraction. This was solvable in-house. Building it was itself a proof point."
           },
           {
             "label": "The Scope",
@@ -1245,21 +1267,43 @@
       {
         "type": "journeyStages",
         "background": "default",
-        "eyebrow": "Phase 4–5 — v1.1.0–v1.2.0",
-        "heading": "Two sprints. Two versions.",
-        "body": "The CMS shipped in two focused sprints. The second sprint's key product decision — replacing a raw JSON textarea with a visual section builder — was driven by a UX problem the first sprint revealed: the tool required knowing the data schema by memory to use it.",
+        "eyebrow": "The Build Arc",
+        "heading": "Four versions. One direction.",
+        "body": "Each version solved a specific problem. The direction never changed \u2014 only what was possible.",
         "stages": [
+          {
+            "number": "v1.0.0",
+            "title": "Design + Launch",
+            "subtitle": "Content strategy, design system, full-stack build. Live on Vercel in ~2 weeks."
+          },
           {
             "number": "v1.1.0",
             "title": "Core CMS",
-            "subtitle": "JWT auth, protected routes, project editor, site content editor. Full CRUD on all content from a browser. No code required to update the portfolio."
+            "subtitle": "JWT auth, project editor, site content editor. No code required to update the portfolio."
           },
           {
             "number": "v1.2.0",
             "title": "Section Builder",
-            "subtitle": "13 standalone section components. Registry-driven dispatch. Visual card-based editor replaced the raw JSON textarea. Case study page reduced from 800 lines to 110."
+            "subtitle": "13 section components. Visual card-based editor. Case study page: 800 lines \u2192 110."
+          },
+          {
+            "number": "v1.3.0",
+            "title": "Production Persistence",
+            "subtitle": "GitHub API writes. Every save commits to the repo. Vercel rebuilds automatically."
           }
         ]
+      },
+      {
+        "type": "projectOverview",
+        "background": "surface",
+        "eyebrow": "The CMS",
+        "heading": null,
+        "paragraphs": [
+          "The /admin interface handles the full content lifecycle without touching code.",
+          "Projects, sections, and site content are all editable from a single password-protected dashboard. Every save commits directly to the repo \u2014 no terminal, no deploy command, no engineering overhead."
+        ],
+        "image": "/images/this-site/cms-dashboard.png",
+        "imageAlt": "The /admin CMS dashboard \u2014 project list and visual section editor"
       },
       {
         "type": "outcomes",
@@ -1268,7 +1312,7 @@
         "heading": "By the numbers",
         "stats": [
           {
-            "value": "800→110",
+            "value": "800\u2192110",
             "label": "Lines on the case study page"
           },
           {
@@ -1276,58 +1320,61 @@
             "label": "Reusable section components"
           },
           {
-            "value": "2",
-            "label": "Sprints, idea to shipped CMS"
-          },
-          {
-            "value": "0",
-            "label": "External CMS dependencies"
+            "value": "3 wks",
+            "label": "Brief to live CMS"
           }
         ],
         "list": [
-          "Visual section builder replaced raw JSON editing — no schema knowledge required to author content",
+          "Visual section builder \u2014 no schema knowledge required to author content",
           "All case study content editable from /admin without touching code or a terminal",
-          "Section registry pattern — adding a new section type is additive, not surgical",
-          "Every content save is a traceable git commit — version history as a side effect"
+          "Every content save is a traceable, reversible git commit"
         ]
       },
       {
-        "type": "archGrid",
+        "type": "findingsGrid",
         "background": "default",
-        "eyebrow": "Phase 6 — v1.3.0",
+        "eyebrow": "Phase 6 \u2014 v1.3.0",
         "heading": "Solving the production persistence problem",
-        "body": "Vercel's serverless runtime has a read-only filesystem. Content written to disk locally doesn't exist in production. This is a well-known constraint with a few standard solutions. The right answer depends on the tradeoffs you're willing to accept.",
-        "items": [
+        "body": "Vercel\u2019s serverless runtime has a read-only filesystem. The right fix depended on which tradeoffs were worth accepting.",
+        "findings": [
           {
-            "number": "01",
             "title": "The Constraint",
-            "body": "Vercel serverless functions cannot write to the filesystem. Every CMS save was throwing a silent EROFS error in production — swallowed by a missing try/catch, surfacing only as a generic 'Save failed.' message.",
-            "impact": "Identified through systematic error surfacing. The constraint was always there; it just wasn't visible."
+            "items": [
+              "Vercel serverless functions can\u2019t write to the filesystem",
+              "Every CMS save was silently failing with EROFS in production",
+              "Surfaced only after adding proper error handling to API routes"
+            ]
           },
           {
-            "number": "02",
-            "title": "Options Evaluated",
-            "body": "Vercel KV: instant writes, no rebuild required, external dependency, no version history. GitHub Contents API: 1–2 min rebuild, no external service, version history on every save as a side effect.",
-            "impact": "For a personal portfolio with infrequent updates, 2-minute publish latency is a reasonable tradeoff for the simplicity and auditability of git-backed storage."
+            "title": "Options Considered",
+            "items": [
+              "Vercel KV: instant writes, but external dependency and no git history",
+              "GitHub API: 1\u20132 min rebuild, no external service, every save is a commit",
+              "Filesystem fallback: fine locally, not viable on Vercel"
+            ]
           },
           {
-            "number": "03",
-            "title": "Decision Made",
-            "body": "GitHub Contents API. Every CMS save fetches the current file SHA, commits the updated JSON to the repo, and Vercel detects the push and triggers an automatic rebuild.",
-            "impact": "No database. No external dependency. No ongoing cost. Every content change is a traceable, reversible commit."
+            "title": "The Decision",
+            "items": [
+              "GitHub Contents API \u2014 chosen for simplicity and auditability",
+              "Fetch file SHA \u2192 commit updated JSON \u2192 Vercel detects push and rebuilds",
+              "No database. No ongoing cost. Every change is traceable and reversible."
+            ]
           },
           {
-            "number": "04",
             "title": "The Mechanism",
-            "body": "lib/github.ts — 50 lines. Fetch SHA → base64-encode content → PUT to GitHub Contents API → Vercel webhook fires. The entire write path is transparent, auditable, and has no moving parts that can silently fail.",
-            "impact": "The CMS works identically in local dev (filesystem fallback when no token) and in production (GitHub API). One code path, two environments."
+            "items": [
+              "lib/github.ts \u2014 50 lines, no abstraction layers",
+              "Entire write path is transparent with no silent failure points",
+              "Identical behavior locally (filesystem) and in production (GitHub API)"
+            ]
           }
         ]
       }
     ],
     "reflection": {
-      "quote": "Running a full product lifecycle — including the parts that used to require handing off to someone else — changes how you lead a team. You understand the real cost of a late design change. You know which engineering decisions are genuinely constrained and which are just habit. You write better briefs because you've been on the other end of bad ones.",
-      "followUp": "This project was built with Claude as a collaborator throughout — content strategy, design direction, every line of code. The judgment calls — what to cut, what to build, what tradeoff to make — were human. AI accelerated every phase by removing the parts that don't require judgment. That's the integration model, not the replacement model. The walls between disciplines are expensive. This project is proof that they're also optional."
+      "quote": "Running a full product lifecycle \u2014 including the parts that used to require handing off to someone else \u2014 changes how you lead a team. You understand the real cost of a late design change. You know which engineering decisions are genuinely constrained and which are just habit. You write better briefs because you've been on the other end of bad ones.",
+      "followUp": "This project was built with Claude as a collaborator throughout \u2014 content strategy, design direction, every line of code. The judgment calls \u2014 what to cut, what to build, what tradeoff to make \u2014 were human. AI accelerated every phase by removing the parts that don't require judgment. That's the integration model, not the replacement model. The walls between disciplines are expensive. This project is proof that they're also optional."
     },
     "nextProject": null
   }

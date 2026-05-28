@@ -4,13 +4,13 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FadeUp from '@/components/FadeUp'
-import { getAllProjects, getProjectBySlug } from '@/lib/content'
+import { getAllProjectsAdmin, getProjectBySlug } from '@/lib/content'
 import { SECTION_REGISTRY } from '@/lib/sections'
 
 // ─── Static Params ────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return getAllProjects().map(p => ({ slug: p.slug }))
+  return getAllProjectsAdmin().map(p => ({ slug: p.slug }))
 }
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
