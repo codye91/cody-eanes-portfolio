@@ -1105,8 +1105,8 @@
           "value": "github.com/codye91/cody-eanes-portfolio"
         },
         {
-          "label": "Live",
-          "value": "codyeanes.com"
+          "label": "Git Repo",
+          "value": "https://github.com/codye91/cody-eanes-portfolio"
         }
       ]
     },
