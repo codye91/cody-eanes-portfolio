@@ -1101,11 +1101,11 @@
           "value": "Next.js 15, TypeScript, GitHub API, Vercel"
         },
         {
-          "label": "Live",
-          "value": "https://codyeanes.com"
+          "label": "Repo",
+          "value": "github.com/codye91/cody-eanes-portfolio"
         },
         {
-          "label": "Repo",
+          "label": "Git Repo",
           "value": "https://github.com/codye91/cody-eanes-portfolio"
         }
       ]
@@ -1369,7 +1369,7 @@
       }
     ],
     "reflection": {
-      "quote": "Running a full product lifecycle — including the parts that used to require handing off to someone else — changes how you lead a team.",
+      "quote": "Running the whole lifecycle myself is what lets me teach it. You can't turn a handoff into a repeatable pattern for your team until you've stood on both ends of it.",
       "followUp": "You understand the real cost of a late design change. You know which engineering decisions are genuinely constrained and which are just habit. You write better briefs because you've been on the other end of bad ones. This project was built with Claude as a collaborator throughout — content strategy, design direction, every line of code. The judgment calls — what to cut, what to build, what tradeoff to make — were human. AI accelerated every phase by removing the parts that don't require judgment. That's the integration model, not the replacement model. The walls between disciplines are expensive. This project is proof that they're also optional."
     },
     "nextProject": {
