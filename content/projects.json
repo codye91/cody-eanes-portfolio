@@ -1120,7 +1120,7 @@
         "background": "surface",
         "eyebrow": "The Brief",
         "heading": "A portfolio that was contradicting itself",
-        "quote": "Most designers outsource everything outside of design. That outsourcing creates blind spots \u2014 in how you write briefs, how you scope projects, how you talk to engineers, how you lead a product team. This project was about closing those gaps intentionally.",
+        "quote": "Most designers outsource everything outside of design. This project was about closing those gaps.",
         "source": "The real brief",
         "bodyTexts": [
           "The surface problem: I needed a portfolio. The deeper problem: a static Squarespace site was actively contradicting the claim that I think in systems and ship things.",
@@ -1319,35 +1319,43 @@
         ]
       },
       {
-        "type": "archGrid",
+        "type": "findingsGrid",
         "background": "default",
         "eyebrow": "Phase 6 \u2014 v1.3.0",
         "heading": "Solving the production persistence problem",
-        "body": "Vercel's serverless runtime has a read-only filesystem. The right fix depended on which tradeoffs were worth accepting.",
-        "items": [
+        "body": "Vercel\u2019s serverless runtime has a read-only filesystem. The right fix depended on which tradeoffs were worth accepting.",
+        "findings": [
           {
-            "number": "01",
             "title": "The Constraint",
-            "body": "Vercel serverless functions can't write to the filesystem \u2014 every CMS save was silently failing with EROFS in production.",
-            "impact": "Surfaced by adding proper error handling to the API routes."
+            "items": [
+              "Vercel serverless functions can\u2019t write to the filesystem",
+              "Every CMS save was silently failing with EROFS in production",
+              "Surfaced only after adding proper error handling to API routes"
+            ]
           },
           {
-            "number": "02",
-            "title": "Options",
-            "body": "Vercel KV: instant writes, external dependency, no history. GitHub API: 1\u20132 min rebuild, no external service, every save is a commit.",
-            "impact": "For a personal portfolio, rebuild latency is a fine tradeoff for simplicity and auditability."
+            "title": "Options Considered",
+            "items": [
+              "Vercel KV: instant writes, but external dependency and no git history",
+              "GitHub API: 1\u20132 min rebuild, no external service, every save is a commit",
+              "Filesystem fallback: fine locally, not viable on Vercel"
+            ]
           },
           {
-            "number": "03",
-            "title": "Decision",
-            "body": "GitHub Contents API \u2014 fetch file SHA, commit updated JSON, Vercel detects the push and rebuilds.",
-            "impact": "No database. No ongoing cost. Every content change is traceable and reversible."
+            "title": "The Decision",
+            "items": [
+              "GitHub Contents API \u2014 chosen for simplicity and auditability",
+              "Fetch file SHA \u2192 commit updated JSON \u2192 Vercel detects push and rebuilds",
+              "No database. No ongoing cost. Every change is traceable and reversible."
+            ]
           },
           {
-            "number": "04",
             "title": "The Mechanism",
-            "body": "lib/github.ts \u2014 50 lines. The entire write path is transparent and has no moving parts that can silently fail.",
-            "impact": "Identical behavior in local dev (filesystem fallback) and production (GitHub API)."
+            "items": [
+              "lib/github.ts \u2014 50 lines, no abstraction layers",
+              "Entire write path is transparent with no silent failure points",
+              "Identical behavior locally (filesystem) and in production (GitHub API)"
+            ]
           }
         ]
       }
