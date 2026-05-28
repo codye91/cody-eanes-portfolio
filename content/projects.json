@@ -1055,11 +1055,7 @@
       "quote": "What made this project distinct from single-brand work was the constant negotiation between system-level thinking and brand-level advocacy. Both are legitimate perspectives. Neither can win completely.",
       "followUp": "The work that matters most on a project like this rarely shows up in a portfolio screenshot. It shows up in the governance model. In the decision rights document. In the stakeholder relationship that made five simultaneous launches possible without five simultaneous fires."
     },
-    "nextProject": {
-      "slug": "this-site",
-      "title": "I built this. All of it.",
-      "blurb": "A meta case study on running the full product lifecycle solo."
-    }
+    "nextProject": null
   },
   {
     "slug": "this-site",
