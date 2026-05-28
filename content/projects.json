@@ -1101,11 +1101,11 @@
           "value": "Next.js 15, TypeScript, GitHub API, Vercel"
         },
         {
-          "label": "Repo",
-          "value": "github.com/codye91/cody-eanes-portfolio"
+          "label": "Live",
+          "value": "https://codyeanes.com"
         },
         {
-          "label": "Git Repo",
+          "label": "Repo",
           "value": "https://github.com/codye91/cody-eanes-portfolio"
         }
       ]
