@@ -1064,7 +1064,7 @@
   {
     "slug": "this-site",
     "order": 1,
-    "visible": false,
+    "visible": true,
     "reversed": false,
     "card": {
       "role": "Solo \u2014 Strategy, Design, Engineering, Deployment",
